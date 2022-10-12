@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form id="form">
+        <input type="text" id="input">
+        <datalist id="data"></datalist>
+        <button type="submit" onclick="getText(event);">Pulsa</button>
+    </form>
+    <script type="text/javascript">
+        function getText(event) {
+            event.preventDefault();
+            let text = document.getElementById('input').value;
+            fillOption(text);
+            console.log(text);
+            document.getElementById('input').value = "";
+            document.getElementById('input').focus(); 
+        }
+
+        function fillOption(text){
+            let list = document.getElementById('data');
+            let option = document.createElement('option');
+            option.value = text;
+            list.appendChild(option);
+            console.log(option);
+        }
+    </script>
+
+</body>
+</html>
