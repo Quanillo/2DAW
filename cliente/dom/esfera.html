@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <p>Introduce el radio de una esfera</p>
+        <input type="text" id="input">
+        <button type="submit" onclick="getVolumen(event);">add</button>
+        <ul id="lista"></ul>
+    </form>
+
+    <script type="text/javascript">
+        function getVolumen(event){
+            event.preventDefault();
+            let radio = Number(document.getElementById('input').value);
+            //V = 4/3 πr³.
+            const volumen = 4/3*(Math.PI*Math.pow(radio,3));
+            fillUl(volumen)
+            document.getElementById('input').value = "";
+            document.getElementById('input').focus(); 
+        }
+
+        function fillUl (text){
+            let lista = document.getElementById('lista');
+            let li = document.createElement('li');
+            li.innerHTML = text;
+            lista.appendChild(li);
+        }
+    </script>
+</body>
+</html>

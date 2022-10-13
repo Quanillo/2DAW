@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        html{
+            width: 100%;
+            height: 100%;
+        }
+        body{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>X</h1>
+    <h2 id="x"></h2>
+    <br>
+    <h1>Y</h1>
+    <h2 id="y"></h2>
+    <select id="lista"></select>
+
+    <script type="text/javascript">
+        let mouse_x = 0;
+        let mouse_y = 0;
+
+        document.onmousemove = function (event){
+            mouse_x = event.pageX;
+            mouse_y = event.pageY;
+        }
+
+        function check_mouse(){
+            document.getElementById("x").innerHTML = mouse_x;
+            document.getElementById("y").innerHTML = mouse_y;
+        }
+
+        setInterval(check_mouse, 1);
+
+        document.body.addEventListener("click", (event) => {
+            console.log("X: " + event.pageX + "  Y: " + event.pageY);
+            let lista = document.getElementById('lista');
+            let option = document.createElement("option");
+            option.text = "X: " + event.pageX + "  Y: " + event.pageY;
+            lista.add(option);
+        });
+    </script>
+</body>
+</html>

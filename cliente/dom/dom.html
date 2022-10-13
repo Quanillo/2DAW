@@ -1,35 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
     
     <form id="form">
         <input type="text" id="input">
-        <datalist id="data"></datalist>
-        <button type="submit" onclick="getText(event);">Pulsa</button>
+        <button type="submit" id="add" onclick="getText(event);">add</button>
+        <button type="submit" id="delete" onclick="deleteText(event);">detelete</button>
+        <select id="lista"></select>
     </form>
+
     <script type="text/javascript">
         function getText(event) {
             event.preventDefault();
             let text = document.getElementById('input').value;
-            fillOption(text);
             console.log(text);
+            fillUl(text);
+            document.getElementById('input').value = "";
+            document.getElementById('input').focus(); 
+        }
+        function fillUl (text){
+            let lista = document.getElementById('lista');
+            let option = document.createElement("option");
+            option.text = text;
+            lista.add(option);
+            
+        }
+
+        function deleteText(event){
+            event.preventDefault();
+            let text = document.getElementById('input').value;
+            let lista = document.getElementById('lista');
+            for(let i=0; i<lista.children.length; i++){
+                let value = lista.children[i].textContent;
+                if(value==text){
+                    lista.removeChild(lista.children[i]);
+                }
+            }
             document.getElementById('input').value = "";
             document.getElementById('input').focus(); 
         }
 
-        function fillOption(text){
-            let list = document.getElementById('data');
-            let option = document.createElement('option');
-            option.value = text;
-            list.appendChild(option);
-            console.log(option);
-        }
+        /*document.getElementById("delete").addEventListener("click", ()=>{
+            let text = document.getElementById('input').value;
+            let arr = [... document.getElementById("lista").children];
+            console.log(text); 
+            arr.map(el=> el.value == text ? el.remove() : el)
+            document.getElementById('input').value = "";
+            document.getElementById('input').focus(); 
+
+            jason.server
+        })*/
     </script>
 
 </body>

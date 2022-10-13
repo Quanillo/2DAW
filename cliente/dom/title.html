@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <p>Cambia el titulo de la página</p>
+        <input type="text" id="input">
+        <button type="submit" onclick="changeTitle(event);">change</button>
+    </form>
+    <script type="text/javascript">
+        function changeTitle(event){
+            event.preventDefault();
+            let title = document.getElementById('input').value;
+            document.title = title;
+            document.getElementById('input').value = "";
+            document.getElementById('input').focus(); 
+        }
+
+    </script>
+</body>
+</html>
+

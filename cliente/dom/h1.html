@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <h1 id="h1">Change me</h1>
+        <input type="text" id="input">
+        <button type="submit" onclick="changeTitle(event);">change</button>
+    </form>
+    <script type="text/javascript">
+        function changeTitle(event){
+            event.preventDefault();
+            let text = document.getElementById('input').value;
+            document.getElementById('h1').innerHTML = text;
+            document.getElementById('input').value = "";
+            document.getElementById('input').focus(); 
+        }
+
+    </script>
+</body>
+</html>
