@@ -12,7 +12,6 @@ echo "<br><br>";
 
 $arr = explode("/", $_SERVER['SCRIPT_NAME']);
 $documento = $arr[sizeof($arr)-1];
-
 echo $longitud;
 echo "Documento - ".$documento;
 
