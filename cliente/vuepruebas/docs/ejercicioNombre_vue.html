@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="miApp">
+       
+        <h1>{{ nombre }}</h1>
+        <h1>{{ apellido }}</h1>
+        <input type="text" v-model="nombreIntro" @keyup.enter="addNombre"/>
+        <input type="text" v-model="apellidoIntro" @keyup.enter="addApellido" />
+
+        <select>
+            <option v-for="(elemento, index) in listaElementos" :key="index">
+               <span> {{ elemento }}</span> 
+            </option>
+        </select>
+    </div>
+        
+     <!-- Cargamos Vue desde el CDN -->
+     <script src="https://unpkg.com/vue@next"></script>
+     <!-- Importamos nuestro script donde esta Vue -->
+     <script src="app_ejerNombre.js"></script>
+</body>
+</html>
