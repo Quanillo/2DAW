@@ -39,7 +39,7 @@ const fetchPokemonInfo = (name)=> {
 const axiosPokemonInfo = async (name) => {
   try {
     const response = await axios.get("https://pokeapi.co/api/v2/pokemon/" + name);
-    return response;
+    return response.data;
   } catch (error) {
     console.log(error)
   }
@@ -50,7 +50,7 @@ const fetchPokemonInfoA = async (name) => {
   try {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
     const pokeInfo = await response.json();
-    return pokeInfo;
+    return pokeInfo.data;
   } catch (error) {
     console.log(error);
   }

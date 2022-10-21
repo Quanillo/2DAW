@@ -1,0 +1,15 @@
+{
+  "name": "pokeapp",
+  "version": "1.0.0",
+  "description": "App to find pokemons",
+  "main": "index.js",
+  "type": "module",
+  "keywords": [
+    "poke"
+  ],
+  "author": "Juan",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.1.3"
+  }
+}

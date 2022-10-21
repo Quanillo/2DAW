@@ -17,19 +17,15 @@ fetchPokemonInfo('charmander');
 //pokemon con async
 const pokemonFetch = await fetchPokemonInfoA('ditto');
 console.log(pokemonFetch);
+//pokemon con axios
+const ditto = await axiosPokemonInfo('ditto');
 */
 
 
-
-//pokemon con axios
+//lista con axios
+let lista = await axiosPokemon(10);
 const ditto = await axiosPokemonInfo('ditto');
 
-try {
-    dittoObj = ditto;
-} catch (e) {
-    return undefined; // Or whatever action you want here
-}
 
-
-console.log(dittoObj);
+console.log(ditto.name);
 

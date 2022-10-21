@@ -1,12 +1,12 @@
 {
-  "name": "Día1 AdventofCode 2021, parte 1",
+  "name": "pokeapi",
   "version": "1.0.0",
   "description": "",
   "main": "dia1_1.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Pedro Pereda",
+  "author": "JUan",
   "license": "MIT",
   "type": "module",
   "dependencies": {
