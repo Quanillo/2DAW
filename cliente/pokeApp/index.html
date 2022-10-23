@@ -10,16 +10,41 @@
 <body>
     <div id="miApp">
 
-       <h1>Buscador de pokémon.</h1>
-       <input type="text" v-model.trim="newPokemon" @keyup.enter="findPokemon"/>
-       <button @click="findPokemon">🔍︎</button>
-       <h3>{{ pokemon }}</h3>
-       
+       <h1>How many pokemon do you want to list?</h1>
+       <input type="number" v-model.trim="numPokemon" @keyup.enter="ListPokemon" @click="ListPokemon"/>
+
+       <ul>
+            <li v-for="(pokemon, index) in PokemonList" :key="index">
+                {{ pokemon.name }}
+                <button @click="putPokemon(pokemon.name)">🔍︎</button>
+            </li>
+        </ul>
+
+
+        <h1>Find pokemon</h1>
+        <input type="text" v-model.trim="newPokemon" @keyup.enter="showPokemon"/>
+        <button @click="showPokemon">🔍︎</button>
+
+        <div v-if="exist">
+            <h2>{{ pokemon.name }}</h3>
+            <img v-bind:src="urlImage">
+            <ul>
+                <h3>Moves: </h3>
+                <li v-for="(item, index) in moves" :key="index">
+                    {{ item.move.name }}
+                </li>
+            </ul>
+            <button @click="listLess"  v-if="listAll">Show less</button>
+            <button @click="listMore"  v-else>Show more</button>
+        </div>
     </div>
         
      <!-- Cargamos Vue desde el CDN -->
      <script src="https://unpkg.com/vue@next"></script>
+     <!-- Importamos axios -->
+     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
      <!-- Importamos nuestro script donde esta Vue -->
      <script src="app.js"></script>
+     
 </body>
 </html>
