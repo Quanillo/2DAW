@@ -15,3 +15,5 @@ const carrito = {
   
   console.log(carrito.productos);
   console.log(carrito.precioTotal);
+
+  //comentario
