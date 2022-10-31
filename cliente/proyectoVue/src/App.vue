@@ -1,25 +1,32 @@
 <template>
-  <MyCounter />
-  {{ msg }}
-  <br>
-  <MyOtherCounter />
-  {{ msg2 }}
+  <div>
+    <h1>{{ message }}</h1>
+    <p>{{ author }}</p>
+  </div>
+  <hr />
+  <Pokemons />
 </template>
 
 <script>
-import MyCounter from '@/components/MyCounter.vue'
-import MyOtherCounter from '@/components/MyOtherCounter.vue';
+// Importo mi componente
+import Pokemons from "@/components/Pokemons.vue";
 export default {
-  name: 'App',
+  // Digo que tengo este componente, así lo renderizo
+  components: { Pokemons },
+  // Como me llamo
+  name: "App",
+  // Mis objetos de datos
   data() {
     return {
-      msg: 'Hola soy juan',
-      msg2: 'Hola soy otro componente',
-    }
+      message: "Este es el mensaje",
+      author: "Este será tu nombre",
+    };
   },
-}
+};
 </script>
 
 <style scoped>
-
+h1 {
+  color: blue;
+}
 </style>
