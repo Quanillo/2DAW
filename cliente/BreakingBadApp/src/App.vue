@@ -1,5 +1,5 @@
 <template>
-    <div class="divApp">
+    <div>
         <div>
             <CharacterList :list="list" />
         </div>
@@ -34,10 +34,10 @@ export default {
               console.log(error);
             }  
         },
-
     },
 }
 </script>
 
 <style scoped>
+
 </style>
