@@ -7,7 +7,8 @@
         
         <ul>
             <li v-for="(item, index) in setList" :key="index">
-                <Character :char="item" v-on:addFav="addFav"/>
+                <Character :char="item" />
+                <button @click="addFav(item)">❤️add Fav</button>
             </li>
         </ul>
     </div>
@@ -16,7 +17,8 @@
         <h1>Fav List</h1>
         <ul>
             <li v-for="(item, index) in setFavList" :key="index">
-                <Character :char="item"  v-on:deleteFav="deleteFav"/>
+                <Character :char="item" />
+                <button @click="deleteFav(item)">🖤delete Fav</button>
             </li>
         </ul>
     </div>
@@ -25,7 +27,6 @@
 
 <script>
 import Character from "./Character.vue";
-import Fav from "./Fav.vue";
 export default {
     name: 'CharacterList',
     components: {Character},
@@ -42,15 +43,12 @@ export default {
         }
     },
     methods: {
-        addFav(char){
-            this.favList.push(char);
-            this.char.isFav = true;
-            this.setFavList();
+        addFav(item){
+            this.favList.includes(item) ? item : this.favList.push(item);
         },
-        deleteFav(char){
-            this.favList.filter(x=>x.id!==char.id);
-            this.char.isFav = false;
-            this.setFavList();
+        deleteFav(item){
+            const index = this.favList.findIndex(x=> x.id === item.id);
+            this.favList.splice(index, 1);
         }
     },
     computed: {

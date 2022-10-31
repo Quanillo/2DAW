@@ -6,12 +6,6 @@
             {{ ocupation }}<br>
         </span>
         <span>{{ char.status }} &#160 &#160</span>
-        <div v-if="this.isFav == false">
-            <button v-on:click="addFav">❤️</button>
-        </div>
-        <div v-else>
-            <button v-on:click="deleteFav">🖤</button>
-        </div>
         <img :src="char.img" @error="$event.target.src='https://m.media-amazon.com/images/I/51USIhCUJYL._AC_.jpg'" width="200" height="200">
     </div>
 </template>
@@ -24,17 +18,19 @@ export default {
             type: Object,
         }, 
     },
-    data(){
-        return{
-            isFav: false,
-        }
-    },
     methods: {
         addFav(){
             this.$emit('addFav', this.char);
         },
         deleteFav(){
             this.$emit('deleteFav', this.char);
+        },
+        getImage(){
+            try {
+                let url = char.img;
+            } catch (error) {
+                return 'https://m.media-amazon.com/images/I/51USIhCUJYL._AC_.jpg';
+            }
         }
     }
 }
