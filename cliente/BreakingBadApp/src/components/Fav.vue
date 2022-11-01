@@ -1,10 +1,8 @@
 <template>
-    <div>
-        <h1 class="text-2xl text-stone-200">Fav List</h1><br>
+    <div class="m-5 place-items-center">
         <ul>
             <li v-for="(item, index) in setFavList" :key="index">
-                <Character :char="item" :favList="favList" :isFav="isFav" @deleteFav="deleteFav" />
-
+                <CharMin :char="item" :favList="favList" :isFav="isFav" @deleteFav="deleteFav" />
             </li>
         </ul>
     </div>
@@ -12,9 +10,10 @@
 
 <script>
 import Character from "./Character.vue";
+import CharMin from "./CharMin.vue";
 export default {
     name: 'Fav',
-    components: { Character },
+    components: { Character, CharMin },
     props: {
         favList: {
             type: Array,

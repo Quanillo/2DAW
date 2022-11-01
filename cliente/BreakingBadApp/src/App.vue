@@ -1,15 +1,23 @@
 <template>
-<div class>
+<div>
     <div>
-        <img src="@/components/icons/banner3.jpg" />
+        <img src="@/components/icons/banner5.jpg" />
     </div>
-    <div class="divClass">
-        <div>
-            <CharacterList :list="list" :favList="favList" />
+    <div class="flex flex-row justify-center ">
+        <div class="mt-5">
+            <CharListTitle />
+            <div v-if="isLoading">
+                <Loading />
+            </div>
+            <div v-else>
+                <CharacterList :list="list" :favList="favList" />
+            </div>
         </div>
-
-        <div>
-            <Fav :favList="favList" />
+        <div  v-if="favExist == true">
+            <div class="mt-5">
+                <FavListTitle />
+                <Fav :favList="favList" />
+            </div>
         </div>
     </div>
 </div>
@@ -18,12 +26,18 @@
 <script>
 import CharacterList from './components/CharacterList.vue';
 import Fav from './components/Fav.vue';
+import Loading from './components/Loading.vue';
+import CharListTitle from './components/CharListTitle.vue';
+import FavListTitle from './components/FavListTitle.vue';
 import axios from 'axios';
 export default {
     name: 'App',
     components: {
         CharacterList,
         Fav,
+        Loading,
+        CharListTitle,
+        FavListTitle,
     },
     created() {
         if (localStorage.getItem('favListData') != null) {
@@ -37,6 +51,7 @@ export default {
         return {
             list: [],
             favList: [],
+            isLoading: true,
         }
     },
     methods: {
@@ -44,10 +59,16 @@ export default {
             try {
                 const response = await axios.get(`https://www.breakingbadapi.com/api/characters`);
                 this.list = (response.data);
+                this.isLoading = false;
             } catch (error) {
                 console.log(error);
             }
         },
+    },
+    computed: {
+        favExist(){
+            return this.favList.length == 0 ? false : true;
+        }
     },
 }
 </script>

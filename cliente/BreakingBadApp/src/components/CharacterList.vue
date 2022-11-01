@@ -1,16 +1,16 @@
 <template>
-    <div>
-        <div class="place-items-center">
-            <h1 class="text-2xl text-stone-200"> Find characters</h1>
-            <input type="text" v-model.trim="search" @keyup.enter="setList" class="bg-lime-100"/>
-            <ul>
-                <li v-for="(item, index) in setList" :key="index">
-                    <Character :char="item" :favList="favList" @addFav="addFav" @deleteFav="deleteFav" />
-                </li>
-            </ul>
+    <div class="m-5 place-items-center">
+        <div class="text-center">
+            <input type="text" v-model.trim="search" @keyup.enter="setList" 
+            class="mt-1 rounded-md shadow-sm focus:border-emerald-200 focus:ring-emerald-200 sm:text-sm" />
         </div>
-
+        <ul>
+            <li v-for="(item, index) in setList" :key="index">
+                <Character :char="item" :favList="favList" @addFav="addFav" @deleteFav="deleteFav" />
+            </li>
+        </ul>
     </div>
+
 </template>
     
 <script>
