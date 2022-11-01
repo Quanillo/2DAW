@@ -1,21 +1,21 @@
 <template>
-    <div class="m-5 rounded-lg  bg-emerald-900 shadow-sm shadow-emerald-200 hover:opacity-80">
+    <div class="m-5 rounded-lg  bg-emerald-900 shadow-sm drop-shadow-lime shadow-lime-200 hover:opacity-80">
         <div class="flex font-sans backg">
             <div class="m-5 flex-none relative ">
                 <img :src="char.img" 
-                class="object-top object-cover w-24 h-24 rounded-full mx-auto" 
+                class="object-top object-cover w-28 h-28 rounded-full mx-auto border-2 border-lime-200" 
                 loading="lazy">
             </div>
             <div class="flex-auto p-6">
                 <span class="flex-auto text-xl font-semibold text-stone-200">{{ char.name }}</span>
-                <span class="text-lg font-semibold text-lime-500"> '{{ char.nickname }}'</span><br>
+                <span class="text-lg font-semibold text-lime-200"> '{{ char.nickname }}'</span><br>
                 
                 <div>
-                    <span class="text-lg font-semibold text-lime-500">Status: </span>
+                    <span class="text-lg font-semibold text-lime-200">Status: </span>
                     <span class=" flex-auto text-base font-semibold text-stone-200">{{ char.status }} &#160 &#160 &#160</span>
                 </div>
                 <div>
-                    <span class="text-lg font-semibold text-lime-500">Seasons: </span>
+                    <span class="text-lg font-semibold text-lime-200">Seasons: </span>
                     <span class=" flex-auto text-base font-semibold text-stone-200">{{ char.appearance.length }} &#160 &#160 &#160</span>
                 </div>
                     <span class="text-left flex justify-end">

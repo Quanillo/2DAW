@@ -1,27 +1,29 @@
 <template>
-    <div class="m-5 rounded-lg  bg-emerald-900 shadow-sm shadow-emerald-200 hover:opacity-80">
+    <div class="m-5 rounded-lg  bg-emerald-900 shadow-sm drop-shadow-lime shadow-lime-200 hover:opacity-80">
         <div class="flex font-sans backg">
             <div class="flex-none w-48 relative ">
-                <img :src="char.img" class=" rounded-l-lg absolute inset-0 w-full h-full object-cover" loading="lazy">
+                <img :src="char.img" 
+                class=" rounded-l-lg absolute inset-0 w-full h-full object-cover" 
+                loading="lazy">
             </div>
             <div class="flex-auto p-6">
                 <span class="flex-auto text-xl font-semibold text-stone-200">{{ char.name }}</span>
-                <span class="text-lg font-semibold text-lime-500"> '{{ char.nickname }}'</span><br>
-                <p class="text-lg font-semibold text-lime-500">Ocupations:</p>
+                <span class="text-lg font-semibold text-lime-200"> '{{ char.nickname }}'</span><br>
+                <p class="text-lg font-semibold text-lime-200">Ocupations:</p>
                 <span v-for="(ocupation, index) in char.occupation" :key="index">
                     <p class=" flex-auto text-base font-semibold text-stone-200"> ☢️ {{ ocupation }}</p>
                 </span>
                 <div>
-                    <span class="text-lg font-semibold text-lime-500">Status: </span>
+                    <span class="text-lg font-semibold text-lime-200">Status: </span>
                     <span class=" flex-auto text-base font-semibold text-stone-200">{{ char.status }} &#160 &#160
                         &#160</span>
                 </div>
                 <div>
-                    <span class="text-lg font-semibold text-lime-500">portrayed: </span>
+                    <span class="text-lg font-semibold text-lime-200">portrayed: </span>
                     <span class=" flex-auto text-base font-semibold text-stone-200">{{ char.portrayed }}</span>
                 </div>
                 <div>
-                    <span class="text-lg font-semibold text-lime-500">Seasons: </span>
+                    <span class="text-lg font-semibold text-lime-200">Seasons: </span>
                     <span class=" flex-auto text-base font-semibold text-stone-200">{{ char.appearance.length }}</span>
                 </div>
                 <div class="flex justify-end">

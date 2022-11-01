@@ -53,6 +53,8 @@ export default {
         setList() {
             if (this.search == '') {
                 return this.list.slice(0, 10);
+            } else if(this.search == 'all') {
+                return this.list;
             } else {
                 return this.list.filter(x => x.name.toUpperCase().includes(this.search.toUpperCase()));
             }

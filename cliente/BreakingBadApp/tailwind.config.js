@@ -5,6 +5,9 @@ module.exports = {
     extend: {
       fontFamily:{
         'breakingbad': ['breakingbad', 'cursive'],
+      },
+      dropShadow: {
+        'lime': '0 35px 35px rgba(217,249,157, 0.05)',
       }
     },
   },
