@@ -15,8 +15,7 @@
                 </span>
                 <div>
                     <span class="text-lg font-semibold text-lime-200">Status: </span>
-                    <span class=" flex-auto text-base font-semibold text-stone-200">{{ char.status }} &#160 &#160
-                        &#160</span>
+                    <span class=" flex-auto text-base font-semibold text-stone-200">{{ char.status }} &#160 &#160 &#160</span>
                 </div>
                 <div>
                     <span class="text-lg font-semibold text-lime-200">portrayed: </span>
@@ -28,13 +27,13 @@
                 </div>
                 <div class="flex justify-end">
                     <div v-if="!isFav">
-                        <button @click="addFav(item)"
-                            class="text-2xl hover:scale-125 border-solid border-black">💚</button> 
-                    </div>
-                    <div v-else>
-                        <button @click="deleteFav(item)"
-                            class="text-2xl hover:scale-125 border-solid border-black">🖤</button>
-                    </div>
+                            <button @click="addFav(item)"
+                                class="text-5xl font-heart text-[#111410] hover:scale-125 border-solid border-black">p</button>
+                        </div>
+                        <div v-else>
+                            <button @click="deleteFav(item)"
+                                class="text-5xl font-heart text-lime-200 hover:scale-125 border-solid border-black">p</button> 
+                        </div>
                 </div>
   
             </div>

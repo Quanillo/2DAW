@@ -21,11 +21,11 @@
                     <span class="text-left flex justify-end">
                         <div v-if="!isFav">
                             <button @click="addFav(item)"
-                                class="text-2xl hover:scale-125 border-solid border-black">💚</button>
+                                class="text-5xl font-heart text-[#111410]  hover:scale-125 border-solid border-black">p</button>
                         </div>
                         <div v-else>
                             <button @click="deleteFav(item)"
-                                class="text-2xl hover:scale-125 border-solid border-black">🖤</button> 
+                                class="text-5xl font-heart text-lime-200 hover:scale-125 border-solid border-black">p</button> 
                         </div>
                     </span>
                 

@@ -58,7 +58,6 @@ export default {
             } else {
                 return this.list.filter(x => x.name.toUpperCase().includes(this.search.toUpperCase()));
             }
-
         },
     },
 }

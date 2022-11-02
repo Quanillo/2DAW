@@ -13,14 +13,6 @@
     <script>
     export default {
         name: 'Loading',
-        data(){
-            return{
-
-            }
-        },
-        methods: {
-
-        },
     }
     </script>
         

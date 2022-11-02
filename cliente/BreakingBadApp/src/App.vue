@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="bg-[#111410] h-full">
     <div>
         <img src="@/components/icons/banner5.jpg" />
     </div>
@@ -19,7 +19,16 @@
                 <Fav :favList="favList" />
             </div>
         </div>
+        <div class="mt-5 justify-start">
+            <button
+                @click="changeMode"
+                class="px-4 py-2 text-white bg-gray-600 dark:bg-purple-700"
+            >
+                Dark Toggle
+            </button>
+        </div>
     </div>
+
 </div>
 </template>
 
@@ -30,6 +39,8 @@ import Loading from './components/Loading.vue';
 import CharListTitle from './components/CharListTitle.vue';
 import FavListTitle from './components/FavListTitle.vue';
 import axios from 'axios';
+import { useDark, useToggle } from "@vueuse/core";
+
 export default {
     name: 'App',
     components: {
@@ -64,6 +75,11 @@ export default {
                 console.log(error);
             }
         },
+        changeMode(){
+            const isDark = useDark();
+            const toggleDark = useToggle(isDark);
+            return toggleDark;
+        }
     },
     computed: {
         favExist(){

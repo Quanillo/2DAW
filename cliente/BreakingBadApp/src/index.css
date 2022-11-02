@@ -6,3 +6,8 @@
     font-family: 'breakingbad';
     src: url('./static/fonts/HeartBreakingBad.otf')
 }
+
+@font-face{
+    font-family: 'heart';
+    src: url('./static/fonts/BonusHearts.ttf')
+}
