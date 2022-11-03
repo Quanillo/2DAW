@@ -14,21 +14,19 @@
                     <span class="text-lg font-semibold text-lime-200">Status: </span>
                     <span class=" flex-auto text-base font-semibold text-stone-200">{{ char.status }} &#160 &#160 &#160</span>
                 </div>
-                <div>
-                    <span class="text-lg font-semibold text-lime-200">Seasons: </span>
-                    <span class=" flex-auto text-base font-semibold text-stone-200">{{ char.appearance.length }} &#160 &#160 &#160</span>
-                </div>
-                    <span class="text-left flex justify-end">
+                <div>                    
+                    <span class="flex text-right justify-end">
+                        <FavButton :char="this.char" :favList="this.favList" @addFav="addFav" @deleteFav="deleteFav"/>
                         <div v-if="!isFav">
                             <button @click="addFav(item)"
-                                class="text-5xl font-heart text-[#111410]  hover:scale-125 border-solid border-black">p</button>
+                            class="text-5xl font-heart text-[#111410] hover:scale-125 border-solid border-black">p</button>
                         </div>
                         <div v-else>
                             <button @click="deleteFav(item)"
-                                class="text-5xl font-heart text-lime-200 hover:scale-125 border-solid border-black">p</button> 
-                        </div>
+                            class="text-5xl font-heart text-lime-200 hover:scale-125 border-solid border-black">p</button> 
+                    </div>
                     </span>
-                
+                </div>
             </div>
             <div>
 
@@ -38,8 +36,11 @@
 </template>
     
 <script>
+import FavButton from "./FavButton.vue";
+
 export default {
     name: 'CharMin',
+    components: { FavButton },
     props: {
         char: {
             type: Object,
@@ -48,6 +49,7 @@ export default {
             type: Array,
         }
     },
+    emits:["addFav", "deleteFav"],
     methods: {
         addFav() {
             this.$emit('addFav', this.char);

@@ -1,9 +1,6 @@
 <template>
-    <h1>Find characters</h1>
-   
-    <input type="text" v-model.trim="newSearch" @setSearch="setSearch"/>
-    <button @click="setSearch">🔍︎</button><br><br>
-    
+    <input type="text" v-model.trim="newSearch" @keydown="setSearch"
+    class="mt-1 rounded-md shadow-sm focus:border-emerald-200 focus:ring-emerald-200 sm:text-sm"/>
 </template>
 
 <script>
@@ -16,11 +13,10 @@ export default {
         }
     },
     methods: {
-       
+        
     },
     computed:{
         setSearch () {
-            console.log(this.newSearch)
             this.$emit("setSearch", this.newSearch);
         }
     }

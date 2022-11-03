@@ -1,12 +1,13 @@
 <template>
     <div class="m-5 place-items-center">
         <div class="text-center">
-            <input type="text" v-model.trim="search" @keyup.enter="setList" 
-            class="mt-1 rounded-md shadow-sm focus:border-emerald-200 focus:ring-emerald-200 sm:text-sm" />
+            <!--<input type="text" v-model.trim="search" @keyup.enter="setList" 
+            class="mt-1 rounded-md shadow-sm focus:border-emerald-200 focus:ring-emerald-200 sm:text-sm" />-->
+            <Browser @setSearch ="setSearch"/>
         </div>
         <ul>
             <li v-for="(item, index) in setList" :key="index">
-                <Character :char="item" :favList="favList" @addFav="addFav" @deleteFav="deleteFav" />
+                <CharMin :char="item" :favList="favList" @addFav="addFav" @deleteFav="deleteFav" />
             </li>
         </ul>
     </div>
@@ -16,9 +17,10 @@
 <script>
 import Browser from "./Browser.vue";
 import Character from "./Character.vue";
+import CharMin from "./CharMin.vue";
 export default {
     name: 'CharacterList',
-    components: { Character, Browser },
+    components: { Character, Browser, CharMin },
     props: {
         list: {
             type: Array,
@@ -47,6 +49,10 @@ export default {
             localStorage.setItem('favListData', JSON.stringify(this.favList));
             this.isFav = false;
         },
+        setSearch(newSearch){
+            console.log(newSearch);
+            this.search = newSearch;
+        }
 
     },
     computed: {

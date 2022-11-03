@@ -1,5 +1,5 @@
 <template>
-  <Entrada etiqueta="Añade" @enviaRespuesta="recibido" />
+  <Entrada v-model="anade1" etiqueta="Añade" @enviaRespuesta="recibido" />
   <Entrada etiqueta="Filtra" @enviaRespuesta="filtra" :blanquear="false" />
   <EntradaCheck :entrada="this.filtrar_por" @enviaRespuesta="ActivaFiltro" />
   <Lista

@@ -8,7 +8,7 @@
         <span class="sr-only">Loading...</span>
     </div>
     
-    </template>
+</template>
         
     <script>
     export default {
