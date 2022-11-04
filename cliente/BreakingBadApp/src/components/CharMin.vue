@@ -13,18 +13,20 @@
                 <div>
                     <span class="text-lg font-semibold text-lime-200">Status: </span>
                     <span class=" flex-auto text-base font-semibold text-stone-200">{{ char.status }} &#160 &#160 &#160</span>
-                </div>
+                </div>  
                 <div>                    
-                    <span class="flex text-right justify-end">
-                        <FavButton :char="this.char" :favList="this.favList" @addFav="addFav" @deleteFav="deleteFav"/>
-                        <div v-if="!isFav">
-                            <button @click="addFav(item)"
-                            class="text-5xl font-heart text-[#111410] hover:scale-125 border-solid border-black">p</button>
+                    <span class="flex  justify-end"> 
+                        <div v-if="this.maxChar === this.char">
+                            <button @click="showMinChar"
+                            class="mr-3 text-5xl font-heart text-lime-200 hover:scale-125 border-solid border-black flex justify-end">-</button>
                         </div>
                         <div v-else>
-                            <button @click="deleteFav(item)"
-                            class="text-5xl font-heart text-lime-200 hover:scale-125 border-solid border-black">p</button> 
-                    </div>
+                            <button @click="showMaxChar" 
+                            class="mr-3 text-5xl font-heart text-lime-200 hover:scale-125 border-solid border-black flex justify-end">+</button>
+                        </div>   
+                       
+                    
+                    <FavButton :char="this.char" :favList="this.favList" @addFav="addFav" @deleteFav="deleteFav"/>  
                     </span>
                 </div>
             </div>
@@ -47,24 +49,39 @@ export default {
         },
         favList: {
             type: Array,
+        },
+        maxChar: {
+            type: Object,
+        },
+    },
+    data(){
+        return{
+            //isMax: false,
         }
     },
-    emits:["addFav", "deleteFav"],
+    emits:["addFav", "deleteFav", "showMaxChar"],
     methods: {
         addFav() {
             this.$emit('addFav', this.char);
         },
-        deleteFav(char) {
+        deleteFav() {
             this.$emit('deleteFav', this.char);
         },
-    },
+        showMaxChar(){
+            this.$emit('showMaxChar', this.char);
+        },
+        showMinChar(){
+            this.$emit('showMaxChar', null);
+        }
+            
+        },
     computed: {
         isFav() {
             if (this.favList.find(x => x.char_id == this.char.char_id))
                 return true;
             else
                 return false;
-        }
+        },
     }
 }
 </script>

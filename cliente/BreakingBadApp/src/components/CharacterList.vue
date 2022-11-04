@@ -5,11 +5,17 @@
             class="mt-1 rounded-md shadow-sm focus:border-emerald-200 focus:ring-emerald-200 sm:text-sm" />-->
             <Browser @setSearch ="setSearch"/>
         </div>
-        <ul>
-            <li v-for="(item, index) in setList" :key="index">
-                <CharMin :char="item" :favList="favList" @addFav="addFav" @deleteFav="deleteFav" />
-            </li>
-        </ul>
+        
+            <div v-if="maxChar == null">
+                <ul>
+                    <li v-for="(item, index) in setList" :key="index">
+                        <CharMin :char="item" :favList="favList" :maxChar="maxChar" @addFav="addFav" @deleteFav="deleteFav" @showMaxChar="showMaxChar" />
+                    </li>
+                 </ul>   
+            </div>
+            <div v-else>
+                <Character :char="this.maxChar" :favList="favList" @addFav="addFav" @deleteFav="deleteFav" @showMaxChar="showMaxChar" />
+            </div>
     </div>
 
 </template>
@@ -28,11 +34,16 @@ export default {
         favList: {
             type: Array,
         },
+        maxChar: {
+            type: Object,
+        },
+  
     },
     data() {
         return {
             filterList: [],
             search: '',
+            //maxChar: null,
         }
     },
     methods: {
@@ -50,13 +61,15 @@ export default {
             this.isFav = false;
         },
         setSearch(newSearch){
-            console.log(newSearch);
             this.search = newSearch;
-        }
-
+        },
+        showMaxChar(char){
+            this.$emit('showMaxChar', char);
+        },
     },
     computed: {
         setList() {
+            console.log(this.search);
             if (this.search == '') {
                 return this.list.slice(0, 10);
             } else if(this.search == 'all') {

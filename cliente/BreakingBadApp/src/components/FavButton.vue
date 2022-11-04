@@ -1,5 +1,5 @@
 <template>
-<div class="flex justify-end">
+<div >
     <div v-if="!isFav">
             <button @click="addFav(item)"
                 class="text-5xl font-heart text-[#111410] hover:scale-125 border-solid border-black">p</button>

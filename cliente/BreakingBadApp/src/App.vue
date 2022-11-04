@@ -10,13 +10,13 @@
                 <Loading />
             </div>
             <div v-else>
-                <CharacterList :list="list" :favList="favList" />
+                <CharacterList :list="list" :favList="favList" :maxChar="maxChar" :isMax="setIsMaxChar" @showMaxChar="showMaxChar"/>
             </div>
         </div>
         <div  v-if="favExist == true">
             <div class="mt-5">
                 <FavListTitle />
-                <Fav :favList="favList" />
+                <Fav :favList="favList" @showMaxChar="showMaxChar" :maxChar="maxChar" :isMax="setIsMaxChar" />
             </div>
         </div>
     </div>
@@ -53,6 +53,8 @@ export default {
         return {
             list: [],
             favList: [],
+            maxChar: null,
+            isMax: false,
             isLoading: true,
         }
     },
@@ -66,10 +68,20 @@ export default {
                 console.log(error);
             }
         },
+        showMaxChar(char){
+            if(char == null){
+                this.maxChar = null;
+            }else{
+                this.maxChar = char;
+            }         
+        },
     },
     computed: {
         favExist(){
             return this.favList.length == 0 ? false : true;
+        },
+        setIsMaxChar(){
+            return this.maxChar
         }
     },
 }
