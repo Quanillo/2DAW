@@ -41,15 +41,11 @@ function validateWeb(web){
     return webReg.test(web) ? true : false;
 }
 
-
 function validate(evento){
     evento.preventDefault();
 
-    if(!validateText(nombre)){
+    if(!validateText(nombre))
         alert('Nombre incorrecto: ' + nombre);
-        console.log(nombre);
-    }
-        
     else if(validateText(apellidos))
         alert('Apellidos incorrectos');
     else if(validateEdad(edad))
@@ -60,7 +56,9 @@ function validate(evento){
         alert('Mail incorrecto');
     else if(validateText(sugerencia)) 
         alert('Sugerencia incorrecta');
-    else 
+    else {
         this.submit();
+    }
+       
 }
 
