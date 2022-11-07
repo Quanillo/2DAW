@@ -47,18 +47,11 @@ export default {
         }
     },
     methods: {
-        addFav(item) {
-            if (!this.favList.includes(item)) {
-                this.favList.push(item);
-                localStorage.setItem('favListData', JSON.stringify(this.favList));
-            }
+        addFav(char) {
+            this.$emit('addFav', char);
         },
-        deleteFav(item) {
-            const index = this.favList.findIndex(x => x.char_id === item.char_id);
-            this.favList.splice(index, 1);
-            localStorage.removeItem('favListData');
-            localStorage.setItem('favListData', JSON.stringify(this.favList));
-            this.isFav = false;
+        deleteFav(char) {
+            this.$emit('deleteFav', char);
         },
         setSearch(newSearch){
             this.search = newSearch;

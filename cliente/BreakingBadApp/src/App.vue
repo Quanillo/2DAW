@@ -1,22 +1,22 @@
 <template>
-<div class="bg-[#111410] h-full">
-    <div class="sticky top-0">
-        <img src="@/components/icons/banner5.jpg" />
+<div class="bg-[#111410] h-full items-center">
+    <div class="top-0 w-screen h-20 sm:h-40">
+        <img class="w-full h-full object-cover" src="@/components/icons/banner5.jpg" />
     </div>
-    <div class="flex flex-row justify-center ">
+    <div class="md:flex  md:flex-row justify-center">
         <div class="mt-5">
             <CharListTitle />
             <div v-if="isLoading">
                 <Loading />
             </div>
             <div v-else>
-                <CharacterList :list="list" :favList="favList" :maxChar="maxChar" :isMax="setIsMaxChar" @showMaxChar="showMaxChar"/>
+                <CharacterList :list="list" :favList="favList" :maxChar="maxChar" :isMax="setIsMaxChar" @addFav="addFav" @deleteFav="deleteFav" @showMaxChar="showMaxChar"/>
             </div>
         </div>
         <div  v-if="favExist == true">
             <div class="mt-5">
                 <FavListTitle />
-                <Fav :favList="favList" @showMaxChar="showMaxChar" :maxChar="maxChar" :isMax="setIsMaxChar" />
+                <FavList :favList="favList" :maxChar="maxChar" :isMax="setIsMaxChar" @deleteFav="deleteFav" @showMaxChar="showMaxChar" />
             </div>
         </div>
     </div>
@@ -25,7 +25,7 @@
 
 <script>
 import CharacterList from './components/CharacterList.vue';
-import Fav from './components/Fav.vue';
+import FavList from './components/FavList.vue';
 import Loading from './components/Loading.vue';
 import CharListTitle from './components/CharListTitle.vue';
 import FavListTitle from './components/FavListTitle.vue';
@@ -36,7 +36,7 @@ export default {
     name: 'App',
     components: {
         CharacterList,
-        Fav,
+        FavList,
         Loading,
         CharListTitle,
         FavListTitle,
@@ -74,6 +74,17 @@ export default {
             }else{
                 this.maxChar = char;
             }         
+        },
+        addFav(char){
+            this.favList.push(char);
+            localStorage.removeItem('favListData');
+            localStorage.setItem('favListData', JSON.stringify(this.favList));
+        },  
+        deleteFav(item) {
+            const index = this.favList.findIndex(x => x.char_id === item.char_id);
+            this.favList.splice(index, 1);
+            localStorage.removeItem('favListData');
+            localStorage.setItem('favListData', JSON.stringify(this.favList));
         },
     },
     computed: {

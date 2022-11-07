@@ -4,9 +4,9 @@
     </div>
     <div v-else>
         <div class="m-5 rounded-lg  bg-emerald-900 shadow-sm drop-shadow-lime shadow-lime-200 hover:opacity-80">
-            <div class="flex font-sans backg">
-                <div class="flex-none w-60 relative ">
-                    <img :src="char.img" class=" rounded-l-lg absolute inset-0 w-full h-full object-cover"
+            <div class="md:flex font-sans backg">
+                <div class="flex-none md:w-60 relative ">
+                    <img :src="char.img" class="rounded-t-lg md:rounded-l-lg  inset-x-0 top-0 inset-0 w-full h-full object-cover"
                         loading="lazy">
                 </div>
                 <div class="flex-auto p-6">

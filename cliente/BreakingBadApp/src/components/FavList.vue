@@ -24,13 +24,10 @@ export default {
             type: Object,
         },
     },
-    emits:["showMaxChar"],
+    emits:["showMaxChar", "deleteFav"],
     methods: {
-        deleteFav(item) {
-            const index = this.favList.findIndex(x => x.char_id === item.char_id);
-            this.favList.splice(index, 1);
-            localStorage.removeItem('favListData');
-            localStorage.setItem('favListData', JSON.stringify(this.favList));
+        deleteFav(char) {
+            this.$emit('deleteFav', char);
         },
         showMaxChar(char){
             this.$emit('showMaxChar', char);
