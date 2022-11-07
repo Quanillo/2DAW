@@ -1,6 +1,6 @@
 <template>
 <div class="bg-[#111410] h-full">
-    <div>
+    <div class="sticky top-0">
         <img src="@/components/icons/banner5.jpg" />
     </div>
     <div class="flex flex-row justify-center ">
