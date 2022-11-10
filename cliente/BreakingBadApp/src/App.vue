@@ -1,11 +1,12 @@
 <template>
 <div class="bg-[#111410] h-full items-center">
     <div class="top-0 w-screen h-20 sm:h-40">
-        <img class="w-full h-full object-cover" src="@/components/icons/banner5.jpg" />
+        <img class="w-full h-full object-cover" src="@/assets/banner5.jpg" />
     </div>
     <div class="md:flex  md:flex-row justify-center">
         <div class="mt-5">
             <CharListTitle />
+            <Browser  @setSearch ="setList"/>
             <div v-if="isLoading">
                 <Loading />
             </div>
@@ -29,6 +30,7 @@ import FavList from './components/FavList.vue';
 import Loading from './components/Loading.vue';
 import CharListTitle from './components/CharListTitle.vue';
 import FavListTitle from './components/FavListTitle.vue';
+import Browser from "./components/Browser.vue";
 import axios from 'axios';
 
 
@@ -40,14 +42,12 @@ export default {
         Loading,
         CharListTitle,
         FavListTitle,
+        Browser,
     },
     created() {
         if (localStorage.getItem('favListData') != null) {
             this.favList = JSON.parse(localStorage.getItem('favListData'));
         }
-    },
-    mounted() {
-        this.setList();
     },
     data() {
         return {
@@ -55,13 +55,14 @@ export default {
             favList: [],
             maxChar: null,
             isMax: false,
-            isLoading: true,
+            isLoading: false,   
         }
     },
     methods: {
-        async setList() {
+        async setList(search) {
             try {
-                const response = await axios.get(`https://www.breakingbadapi.com/api/characters`);
+                this.isLoading = true;
+                const response = await axios.get(`https://www.breakingbadapi.com/api/characters?name=${search}`);
                 this.list = (response.data);
                 this.isLoading = false;
             } catch (error) {
@@ -85,6 +86,9 @@ export default {
             this.favList.splice(index, 1);
             localStorage.removeItem('favListData');
             localStorage.setItem('favListData', JSON.stringify(this.favList));
+        },
+        setSearch (search) {
+            this.$emit("setSearch", search);
         },
     },
     computed: {

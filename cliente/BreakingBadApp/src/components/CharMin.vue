@@ -2,9 +2,8 @@
     <div class="m-5 rounded-lg  bg-emerald-900 shadow-sm drop-shadow-lime shadow-lime-200 hover:opacity-80">
         <div class="sm:flex font-sans backg relative ">
             <div class="p-3  flex-none static ">
-                <img :src="char.img" 
-                class="object-top object-cover w-28 h-28 rounded-full mx-auto border-2 border-lime-200" 
-                loading="lazy">
+                <img :src="char.img" @error="" loading="lazy"
+                class="object-top object-cover w-28 h-28 rounded-full mx-auto border-2 border-lime-200">
             </div>
             <div class="p-3 flex-auto static text-center place-self-center">
                 <span class="flex-auto text-xl font-semibold text-stone-200">{{ char.name }}</span>

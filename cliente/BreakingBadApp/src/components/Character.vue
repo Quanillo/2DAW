@@ -6,8 +6,8 @@
         <div class="m-5 rounded-lg  bg-emerald-900 shadow-sm drop-shadow-lime shadow-lime-200 hover:opacity-80">
             <div class="md:flex font-sans backg">
                 <div class="flex-none md:w-60 relative ">
-                    <img :src="char.img" class="rounded-t-lg md:rounded-l-lg  inset-x-0 top-0 inset-0 w-full h-full object-cover"
-                        loading="lazy">
+                    <img :src="char.img" @error="" loading="lazy"
+                    class="rounded-t-lg md:rounded-l-lg inset-x-0 top-0 inset-0 w-full h-full object-cover">
                 </div>
                 <div class="flex-auto p-6">
                     <span class="flex-auto text-xl font-semibold text-stone-200">{{ char.name }}</span>

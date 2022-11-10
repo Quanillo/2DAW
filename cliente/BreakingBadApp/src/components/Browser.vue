@@ -1,6 +1,9 @@
 <template>
-    <input type="text" v-model.trim="newSearch" @keydown="setSearch"
-    class="mt-1 rounded-md shadow-sm focus:border-emerald-200 focus:ring-emerald-200 sm:text-sm"/>
+    <div class="text-center">
+        <input type="text" v-model.trim="newSearch" @keydown.enter="setSearch"
+        class="mt-1 rounded-md shadow-sm focus:border-emerald-200 focus:ring-emerald-200 sm:text-sm"/>
+    </div>
+   
 </template>
 
 <script>
