@@ -34,13 +34,6 @@ export default {
         },
   
     },
-    data() {
-        return {
-            filterList: [],
-            //search: '',
-            //maxChar: null,
-        }
-    },
     methods: {
         addFav(char) {
             this.$emit('addFav', char);
@@ -48,25 +41,9 @@ export default {
         deleteFav(char) {
             this.$emit('deleteFav', char);
         },
-        setSearch(newSearch){
-            this.search = newSearch;
-        },
         showMaxChar(char){
             this.$emit('showMaxChar', char);
         },
-    },
-    computed: {
-        /*
-        setList() {
-            console.log(this.search);
-            if (this.search == '') {
-                return this.list.slice(0, 10);
-            } else if(this.search == 'all') {
-                return this.list;
-            } else {
-                return this.list.filter(x => x.name.toUpperCase().includes(this.search.toUpperCase()));
-            }
-        },*/
     },
 }
 </script>

@@ -64,6 +64,7 @@ export default {
                 this.isLoading = true;
                 const response = await axios.get(`https://www.breakingbadapi.com/api/characters?name=${search}`);
                 this.list = (response.data);
+                console.log(response);
                 this.isLoading = false;
             } catch (error) {
                 console.log(error);
