@@ -64,6 +64,7 @@ const getEpisodesByCharacter = async (search) => {
                 episodesList[i].map(x=> episodes += x.substring(x.lastIndexOf('/') + 1)+','); //hacemos un map en cada array de episodios y añadimos al string "episodes" los substring ids.
             }
         }
+        console.log(episodes);
         const response2 = await axios.get(`https://rickandmortyapi.com/api/episode/${episodes}`); 
         return response2.data; //hacemos una consulta multiple añadiendo episodes que contiene los ids de todos los episodios donde aparece el personaje. Devuelve un array con objetos episode 
     } catch (error) {
@@ -71,7 +72,7 @@ const getEpisodesByCharacter = async (search) => {
     }
 }
 
-const episodes = await getEpisodesByCharacter('Rick Sanchez');
+const episodes = await getEpisodesByCharacter('Rick');
 console.log('Rick Sanchez aparece en estos episodios:');
 episodes.map(x=>console.log(x.name));
 
