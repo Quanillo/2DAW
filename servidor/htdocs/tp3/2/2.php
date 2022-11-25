@@ -1,7 +1,10 @@
 <?php
 
-    $base = $_GET['base'];
+   
+$base = $_GET['base'];
+$altura = $_GET['altura'];
 
-    echo = 'hola ' . $base;
+echo  'El área es: ' . ($base * $altura)/2;
+
 
 ?>

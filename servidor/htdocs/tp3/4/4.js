@@ -1,5 +1,5 @@
-const base = document.getElementById("base");
-const altura = document.getElementById("altura");
+const base = document.getElementById("nombre");
+const altura = document.getElementById("edad");
 
 
 document.addEventListener("DOMContentLoaded", function() {
