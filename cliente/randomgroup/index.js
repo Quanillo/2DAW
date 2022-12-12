@@ -6,7 +6,7 @@ const input = fs
 	.toString()
 	.trim()
     .split('\n');
- console.log(input);
+ //console.log(input);
 
  function empareja (lista){
     let parejas = []
@@ -28,4 +28,9 @@ const input = fs
     return parejas;
  }
 
- console.log(empareja(input))
+ //console.log(empareja(input))
+
+
+ let lista = [1,2,3,4,5];
+
+ console.log(lista.sort(()=>Math.random() -0.5));

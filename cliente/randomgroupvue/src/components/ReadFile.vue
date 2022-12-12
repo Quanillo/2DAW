@@ -1,0 +1,25 @@
+<template>
+    <label >
+      {{ this.texto }} 
+      <input type="file" @change="loadTextFromFile">
+    </label>       
+</template>
+  
+<script setup> 
+
+  const emits = defineEmits(['carga'])
+
+  const props = defineProps({
+      texto:{
+          type: String,
+      },
+  })
+
+  function loadTextFromFile(ev) {
+    const file = ev.target.files[0];
+    const reader = new FileReader();
+    reader.onload = e => emits('carga',e.target.result);
+    reader.readAsText(file);
+  }    
+</script>
+  <style></style>
