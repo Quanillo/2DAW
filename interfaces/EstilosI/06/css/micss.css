@@ -1,0 +1,4 @@
+ul.a{list-style-type:disc;}
+ul.b{list-style-type:georgian;}
+ol.c{list-style-type:armenian;}
+ol.d{list-style-image: url('./Taiichi.png');}

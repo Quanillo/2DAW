@@ -1,0 +1,14 @@
+ul.a{
+    background-color: #D2D2D2;
+    border-left: 5px red solid;
+    list-style-type: none;
+}
+
+table{
+    width: 100%;
+    border: 1px #D2D2D2 solid;
+    border-collapse: collapse;
+}
+td{
+    border: 1px #D2D2D2 solid;
+}

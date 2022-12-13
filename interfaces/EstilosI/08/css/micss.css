@@ -1,0 +1,12 @@
+
+table, tr, th, td{
+    border: solid 1px;
+    border-collapse: collapse;
+}
+
+th{
+    background-color: #9ef03c;
+}
+table:child(even){
+    background-color: #cde8ac;
+}
