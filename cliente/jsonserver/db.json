@@ -1,21 +1,19 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
   "user": [
     {
       "name": "Pablo",
+      "pass": "Passw0rd",
+      "nivel": "medio",
+      "id": 1
+    },
+    {
+      "name": "Victor",
+      "pass": "Passw0rd",
+      "nivel": "medio",
+      "id": 1
+    },
+    {
+      "name": "Arturo",
       "pass": "Passw0rd",
       "nivel": "medio",
       "id": 1

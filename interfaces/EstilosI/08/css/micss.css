@@ -1,12 +1,21 @@
 
 table, tr, th, td{
-    border: solid 1px;
+    border: solid 1px #A7C942;
     border-collapse: collapse;
+    caption-side: bottom;
 }
 
 th{
-    background-color: #9ef03c;
+    border: none;
+    text-align: end;
+    color: #FFFFFF;
+    background-color: #A7C942;
 }
-table:child(even){
-    background-color: #cde8ac;
+
+tr:nth-child(odd){
+    background-color: #EAF2D3;
+}
+
+tr:hover{
+    background-color: #A7C942;
 }

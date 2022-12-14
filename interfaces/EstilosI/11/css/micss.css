@@ -1,0 +1,35 @@
+input[type="checkbox"]:not(:checked), 
+input[type="checkbox"]:checked {
+    visibility: hidden;
+  }
+
+input[type="checkbox"] + label {
+    border-radius: .5em;
+    display: inline-block;
+    padding-inline-start: 1em;
+    padding-inline-end: 1em;
+    padding-bottom: .4em;
+    padding-top: .4em;
+    cursor: pointer;
+    border: 2px solid grey;
+    color: black;
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+input[type="checkbox"]:checked + label {
+    border: 2px solid grey;
+    color: white;
+    background-color:darkgrey;
+}
+input[type="checkbox"]:checked::before{
+    counter-increment: section;	
+} 
+
+
+p{
+    text-align: right;
+}
+p::before{
+    content: counter(section);
+}
