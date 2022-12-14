@@ -3,20 +3,32 @@
     {
       "name": "Pablo",
       "pass": "Passw0rd",
-      "nivel": "medio",
+      "level": "medio",
       "id": 1
     },
     {
       "name": "Victor",
       "pass": "Passw0rd",
-      "nivel": "medio",
-      "id": 1
+      "level": "medio",
+      "id": 2
     },
     {
       "name": "Arturo",
       "pass": "Passw0rd",
-      "nivel": "medio",
-      "id": 1
+      "level": "medio",
+      "id": 3
+    },
+    {
+      "name": "Pepe",
+      "pass": "1234",
+      "level": "bajo",
+      "id": 4
+    },
+    {
+      "name": "Juan",
+      "pass": "Passw0rd",
+      "level": "Makina",
+      "id": 6
     }
   ],
   "profile": {

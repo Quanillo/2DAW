@@ -18,18 +18,19 @@ input[type="checkbox"] + label {
 }
 
 input[type="checkbox"]:checked + label {
+    counter-increment: checks;
     border: 2px solid grey;
     color: white;
     background-color:darkgrey;
 }
-input[type="checkbox"]:checked::before{
-    counter-increment: section;	
+input[type="checkbox"]:after{
+    counter-increment: checks;	
 } 
 
 
 p{
     text-align: right;
 }
-p::before{
-    content: counter(section);
+p::after{
+    content:  counter(checks);
 }
