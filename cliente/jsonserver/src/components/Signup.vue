@@ -2,9 +2,13 @@
     <div>
         <p>{{err}}</p>
         <h4>Nombre</h4>
-        <input type="text" v-model="name" />
+        <input type="text" v-model="name" ref="in_name"/>
         <h4>Nivel</h4>
-        <input type="text" v-model="level" />
+        <select id="level" v-model="level">
+            <option value="makina">Makina</option>
+            <option value="perro">Perro</option>
+            <option value="pakete">Pakete</option>
+        </select>
         <h4>Password</h4>
         <input type="password" v-model="pass" />
     </div>
@@ -32,11 +36,10 @@ const signup = async () => {
                 name: `${name.value}`,
                 pass: `${pass.value}`,
                 level: `${level.value}`,
-            }
-            )
-            name.value = '';
-            pass.value = '';
-            level.value = '';
+            })
+            err.value = '';
+            clear();
+            back();
         }
         catch (e) {
             err.value='Ups, Algo salió mal!'
@@ -44,30 +47,33 @@ const signup = async () => {
         }
     }
     else {
-        console.log('El usuario ya esta registrado')
-        name.value = '';
-        pass.value = '';
-        level.value = '';
+        err.value = 'Usuario registrado.'
+        clear();
     }
 
 }
 
 const exist = async () => {
-    let ex = true;
     try {
         const response = await axios.get(
-            `http://localhost:3000/user/`
+            `http://localhost:3000/user/?name=${name.value}`
         );
-        ex = response.data.filter(x => x.name === name.value).length === 0 ? false : true;
+        return response.data.length === 0 ? false : true;
     }
     catch (e) {
         console.log(e)
+        return false;
     }
-    return ex;
 }
 
 function back (){
   emits('back');
+}
+
+function clear (){
+    name.value = '';
+    pass.value = '';
+    level.value = '';
 }
 
 </script>

@@ -4,6 +4,7 @@
   </div>
   <div v-else-if="show === 'signup'">
     <Signup  @back="back" />
+    <List />
   </div>
   <div v-else>
     <p>{{user.name}}</p>
@@ -16,6 +17,7 @@
 <script setup>
 import Login from './components/Login.vue';
 import Signup from './components/Signup.vue'
+import List from './components/List.vue';
 import { ref } from 'vue';
 
 
@@ -37,7 +39,6 @@ function signup () {
 }
 
 function back () {
-  console.log('hola')
   show.value = 'login';
 }
 

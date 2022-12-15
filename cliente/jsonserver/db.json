@@ -29,6 +29,12 @@
       "pass": "Passw0rd",
       "level": "Makina",
       "id": 6
+    },
+    {
+      "name": "Angel",
+      "pass": "perro",
+      "level": "pakete",
+      "id": 7
     }
   ],
   "profile": {
