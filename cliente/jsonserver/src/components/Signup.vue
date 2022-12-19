@@ -22,7 +22,7 @@
 import { ref } from 'vue';
 import axios from 'axios';
 
-const emits = defineEmits(['back', 'signup']);
+const emits = defineEmits(['back', 'signup', 'created']);
 const err = ref('')
 const name = ref('');
 const level = ref('');
@@ -31,15 +31,17 @@ const pass = ref('');
 const signup = async () => {
     if (!(await exist()) && name.value!=='' && pass.value!=='') {
         try {
-            await axios.post(
+            const response = await axios.post(
                 `http://localhost:3000/user/`, {
                 name: `${name.value}`,
                 pass: `${pass.value}`,
                 level: `${level.value}`,
             })
+            emits('created', response.data.id);
+            console.log(response.data.id)
             err.value = '';
             clear();
-            back();
+           
         }
         catch (e) {
             err.value='Ups, Algo salió mal!'
@@ -50,7 +52,6 @@ const signup = async () => {
         err.value = 'Usuario registrado.'
         clear();
     }
-
 }
 
 const exist = async () => {

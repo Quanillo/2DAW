@@ -1,44 +1,78 @@
 <template>
   <div v-if="show === 'login'">
-    <Login @login="login" @signup="signup"/>
+    <Login @login="login" @signup="signup" />
   </div>
   <div v-else-if="show === 'signup'">
-    <Signup  @back="back" />
-    <List/>
+    <Signup @back="back" @created="addUser" />
+    <List :userList="userList" @deleted="deleteUser" />
   </div>
   <div v-else>
-    <p>{{user.name}}</p>
-    <p>{{user.level}}</p>
+    <p>{{ user.name }}</p>
+    <p>{{ user.level }}</p>
     <button @click="back">BACK</button>
   </div>
 
 </template>
 
 <script setup>
+import axios from 'axios';
 import Login from './components/Login.vue';
 import Signup from './components/Signup.vue'
 import List from './components/List.vue';
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
 
 const show = ref('login');
 const user = ref({});
+let userList = ref([]);
 
-function login(data){
-  if(data){
+onMounted(() => {
+  getUsers();
+})
+
+const getUsers = async () => {
+  try {
+    const response = await axios.get(
+      `http://localhost:3000/user/`, {
+    })
+    userList.value = response.data;
+  }
+  catch (e) {
+    console.log(e)
+  }
+}
+
+const addUser = async (id) => {
+  try {
+    const response = await axios.get(
+      `http://localhost:3000/user/id=${id}`, {
+    })
+    userList.value.push(response.data);
+  }
+  catch (e) {
+    console.log(e)
+  }
+}
+
+const deleteUser = (id) => {
+  userList.value = userList.value.filter(x => x.id !== id);
+}
+
+function login(data) {
+  if (data) {
     user.value = data[0];
     show.value = '';
   }
-  else{
+  else {
     show.value = 'login';
   }
 }
 
-function signup () {
+function signup() {
   show.value = 'signup';
 }
 
-function back () {
+function back() {
   show.value = 'login';
 }
 
@@ -46,4 +80,5 @@ function back () {
 
 
 <style scoped>
+
 </style>

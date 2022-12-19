@@ -10,25 +10,18 @@
 </template>
   
 <script setup>
-import { ref, onMounted } from 'vue';
+//import { ref, onMounted } from 'vue';
 import axios from 'axios';
 
-onMounted(() => {
- getUsers();
-})
+const emits = defineEmits(['deleted']);
+const props = defineProps({
+  userList: {
+    type: Array,
+  },
+});
 
-let userList = ref([]);
-
-const getUsers = async () => {
-    try {
-        const response = await axios.get(
-            `http://localhost:3000/user/`, {
-        })
-        userList.value = response.data;
-    }
-    catch (e) {
-        console.log(e)
-    }
+const alertRemoe = () => {
+    alert
 }
 
 const remove = async (id) =>{
@@ -36,9 +29,10 @@ const remove = async (id) =>{
         await axios.delete(
             `http://localhost:3000/user/${id}`, {
         })
-        getUsers();
+        emits('deleted', id);
     }
     catch (e) {
+        console.log('error')
         console.log(e)
     }
 }
