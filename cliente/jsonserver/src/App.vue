@@ -4,7 +4,7 @@
   </div>
   <div v-else-if="show === 'signup'">
     <Signup  @back="back" />
-    <List />
+    <List/>
   </div>
   <div v-else>
     <p>{{user.name}}</p>

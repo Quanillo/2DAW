@@ -1,6 +1,11 @@
 <template>
     <ul v-for="user in userList" :key="user">
-        <li>{{user.name}}</li>
+        <div>
+            <li>{{user.name}}</li>
+            <button @click="remove(user.id)">Delete</button>
+            <button @click="edit">Edit</button>
+        </div>
+
     </ul>
 </template>
   
@@ -9,8 +14,9 @@ import { ref, onMounted } from 'vue';
 import axios from 'axios';
 
 onMounted(() => {
-  getUsers();
+ getUsers();
 })
+
 let userList = ref([]);
 
 const getUsers = async () => {
@@ -18,19 +24,39 @@ const getUsers = async () => {
         const response = await axios.get(
             `http://localhost:3000/user/`, {
         })
-        userList = response.data;
+        userList.value = response.data;
     }
     catch (e) {
         console.log(e)
     }
 }
 
+const remove = async (id) =>{
+    try {
+        await axios.delete(
+            `http://localhost:3000/user/${id}`, {
+        })
+        getUsers();
+    }
+    catch (e) {
+        console.log(e)
+    }
+}
 
+const edit = () =>{
 
+}
 </script>
   
   
 <style scoped>
+div{
+    display: flex;
+    flex-direction: row;
+}
+li{
+    list-style: none;
+}
 </style>
 
 

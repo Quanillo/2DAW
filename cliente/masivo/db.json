@@ -1,0 +1,145 @@
+{
+  "user": [
+    {
+      "name": "Pablo",
+      "pass": "Passw0rd",
+      "level": "medio",
+      "id": 1
+    },
+    {
+      "name": "Victor",
+      "pass": "Passw0rd",
+      "level": "medio",
+      "id": 2
+    },
+    {
+      "name": "Arturo",
+      "pass": "Passw0rd",
+      "level": "medio",
+      "id": 3
+    },
+    {
+      "name": "Pepe",
+      "pass": "1234",
+      "level": "bajo",
+      "id": 4
+    },
+    {
+      "name": "Juan",
+      "pass": "Passw0rd",
+      "level": "Makina",
+      "id": 6
+    },
+    {
+      "name": "Maëlann",
+      "pass": "sMJFo9",
+      "level": "Goldenrod",
+      "id": 7
+    },
+    {
+      "name": "Gösta",
+      "pass": "dbuAZLJM",
+      "level": "Green",
+      "id": 8
+    },
+    {
+      "name": "Kuí",
+      "pass": "CahCexrd",
+      "level": "Turquoise",
+      "id": 9
+    },
+    {
+      "name": "Marlène",
+      "pass": "oMBhFtYEfy4H",
+      "level": "Purple",
+      "id": 10
+    },
+    {
+      "name": "Clémentine",
+      "pass": "x6J13uaf2C",
+      "level": "Khaki",
+      "id": 11
+    },
+    {
+      "name": "Illustrée",
+      "pass": "apPm11u",
+      "level": "Aquamarine",
+      "id": 12
+    },
+    {
+      "name": "Séréna",
+      "pass": "6xkRBLmp",
+      "level": "Khaki",
+      "id": 13
+    },
+    {
+      "name": "Angélique",
+      "pass": "WEssroyE",
+      "level": "Violet",
+      "id": 14
+    },
+    {
+      "name": "Béatrice",
+      "pass": "v7S4Ky0M",
+      "level": "Aquamarine",
+      "id": 15
+    },
+    {
+      "name": "Maëlann",
+      "pass": "sMJFo9",
+      "level": "Goldenrod",
+      "id": 16
+    },
+    {
+      "name": "Béatrice",
+      "pass": "v7S4Ky0M",
+      "level": "Aquamarine",
+      "id": 17
+    },
+    {
+      "name": "Séréna",
+      "pass": "6xkRBLmp",
+      "level": "Khaki",
+      "id": 18
+    },
+    {
+      "name": "Marlène",
+      "pass": "oMBhFtYEfy4H",
+      "level": "Purple",
+      "id": 19
+    },
+    {
+      "name": "Kuí",
+      "pass": "CahCexrd",
+      "level": "Turquoise",
+      "id": 20
+    },
+    {
+      "name": "Gösta",
+      "pass": "dbuAZLJM",
+      "level": "Green",
+      "id": 21
+    },
+    {
+      "name": "Clémentine",
+      "pass": "x6J13uaf2C",
+      "level": "Khaki",
+      "id": 22
+    },
+    {
+      "name": "Illustrée",
+      "pass": "apPm11u",
+      "level": "Aquamarine",
+      "id": 23
+    },
+    {
+      "name": "Angélique",
+      "pass": "WEssroyE",
+      "level": "Violet",
+      "id": 24
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
