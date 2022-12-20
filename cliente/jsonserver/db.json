@@ -1,40 +1,22 @@
 {
   "user": [
     {
+      "name": "Juan",
+      "pass": "Passw0rd",
+      "level": "makina",
+      "id": 1
+    },
+    {
       "name": "Pablo",
       "pass": "Passw0rd",
-      "level": "medio",
-      "id": 1
+      "level": "perro",
+      "id": 2
     },
     {
       "name": "Victor",
       "pass": "Passw0rd",
-      "level": "medio",
-      "id": 2
-    },
-    {
-      "name": "Arturo",
-      "pass": "Passw0rd",
-      "level": "makina",
-      "id": 4
-    },
-    {
-      "name": "Juan",
-      "pass": "Passw0rd",
-      "level": "makina",
-      "id": 5
-    },
-    {
-      "name": "Pepe",
-      "pass": "Passw0rd",
-      "level": "makina",
-      "id": 6
-    },
-    {
-      "name": "Pepino",
-      "pass": "Passw0rd",
-      "level": "makina",
-      "id": 7
+      "level": "pakete",
+      "id": 3
     }
   ],
   "profile": {

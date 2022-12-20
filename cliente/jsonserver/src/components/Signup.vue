@@ -37,8 +37,7 @@ const signup = async () => {
                 pass: `${pass.value}`,
                 level: `${level.value}`,
             })
-            emits('created', response.data.id);
-            console.log(response.data.id)
+            emits('created', response.data);
             err.value = '';
             clear();
            
@@ -53,6 +52,7 @@ const signup = async () => {
         clear();
     }
 }
+
 
 const exist = async () => {
     try {

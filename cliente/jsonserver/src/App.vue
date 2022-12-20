@@ -3,6 +3,7 @@
     <Login @login="login" @signup="signup" />
   </div>
   <div v-else-if="show === 'signup'">
+    <LoadUsers @cargados="getUsers"/>
     <Signup @back="back" @created="addUser" />
     <List :userList="userList" @deleted="deleteUser" />
   </div>
@@ -19,6 +20,7 @@ import axios from 'axios';
 import Login from './components/Login.vue';
 import Signup from './components/Signup.vue'
 import List from './components/List.vue';
+import LoadUsers from './components/LoadUsers.vue';
 import { ref, onMounted } from 'vue';
 
 
@@ -26,7 +28,9 @@ const show = ref('login');
 const user = ref({});
 let userList = ref([]);
 
+
 onMounted(() => {
+  console.log('ey')
   getUsers();
 })
 
@@ -42,16 +46,8 @@ const getUsers = async () => {
   }
 }
 
-const addUser = async (id) => {
-  try {
-    const response = await axios.get(
-      `http://localhost:3000/user/id=${id}`, {
-    })
-    userList.value.push(response.data);
-  }
-  catch (e) {
-    console.log(e)
-  }
+const addUser = async (user) => {
+  userList.value.push(user)
 }
 
 const deleteUser = (id) => {

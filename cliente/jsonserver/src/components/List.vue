@@ -5,8 +5,8 @@
             <button @click="remove(user.id)">Delete</button>
             <button @click="edit">Edit</button>
         </div>
-
     </ul>
+    <button @click="deleteAll">delete all</button>
 </template>
   
 <script setup>
@@ -37,8 +37,8 @@ const remove = async (id) =>{
     }
 }
 
-const edit = () =>{
-
+const deleteAll = () =>{
+    props.userList.map(x=>remove(x.id));
 }
 </script>
   
