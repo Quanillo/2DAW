@@ -1,0 +1,56 @@
+{
+  "material": [
+    {
+      "numSerie": 1,
+      "modelo": "Opel",
+      "reservado": "si",
+      "fecha": "10/10/2023",
+      "id": 1
+    },
+    {
+      "numSerie": "111",
+      "modelo": "AB",
+      "reservado": "SI",
+      "fecha\r": "21/11/2023\r",
+      "id": 2
+    },
+    {
+      "numSerie": "115",
+      "modelo": "BA",
+      "reservado": "SI",
+      "fecha\r": "25/11/2023\r",
+      "id": 3
+    },
+    {
+      "numSerie": "112",
+      "modelo": "BA",
+      "reservado": "SI",
+      "fecha\r": "22/11/2023\r",
+      "id": 4
+    },
+    {
+      "numSerie": "116",
+      "modelo": "AB",
+      "reservado": "SI",
+      "fecha\r": "26/11/2022",
+      "id": 5
+    },
+    {
+      "numSerie": "113",
+      "modelo": "AB",
+      "reservado": "SI",
+      "fecha\r": "23/11/2023\r",
+      "id": 6
+    },
+    {
+      "numSerie": "114",
+      "modelo": "AB",
+      "reservado": "SI",
+      "fecha\r": "24/11/2023\r",
+      "id": 7
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

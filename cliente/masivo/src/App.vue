@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-import ReadFile from "@/components/ReadFile.vue";
+import ReadFile from "./components/ReadFile.vue";
 import axios from "axios";
 import { ref } from "vue";
 const fichero=ref([])
