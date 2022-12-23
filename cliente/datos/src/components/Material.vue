@@ -1,17 +1,23 @@
 <template>
     <p>Numero de serie: {{ material.numSerie }} Modelo: {{ material.modelo }}</p>
-    <p>Reservado: {{ material.reservado }}</p><button>Reservar</button>
-    <p>Fecha: {{ material.fecha }}</p>
+    <span>Reservado: {{ material.reservado }}<button>Reservar</button></span>
+    <p>Fecha: {{ material.fecha }} <input type="date" v-model="newDate"></p>
 </template>
   
 <script setup>
-import { defineProps } from 'vue';
+import { defineProps, ref } from 'vue';
 
 const props = defineProps({
     material: {
         type: Object,
   },
 });
+
+const newDate = ref(new Date());
 </script>
 
-<style></style>
+<style>
+ button{
+    background-color:whitesmoke;
+ }
+</style>

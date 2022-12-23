@@ -1,6 +1,6 @@
 <template>
     <ul v-for="material in materialList" :key="material">
-        <li> <Material :material="material" /> </li>
+        <li v-if="material.reservado==='NO'"> <Material :material="material" /> </li>
     </ul>
 </template>
   

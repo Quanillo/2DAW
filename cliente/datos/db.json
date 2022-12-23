@@ -1,52 +1,52 @@
 {
   "material": [
     {
-      "numSerie": 1,
-      "modelo": "Opel",
-      "reservado": "si",
+      "numSerie": "VODOO-1",
+      "modelo": "AB",
+      "reservado": "SI",
       "fecha": "10/10/2023",
       "id": 1
     },
     {
-      "numSerie": "111",
+      "numSerie": "VODOO-2",
       "modelo": "AB",
-      "reservado": "SI",
-      "fecha\r": "21/11/2023\r",
+      "reservado": "NO",
+      "fecha": "",
       "id": 2
     },
     {
-      "numSerie": "115",
+      "numSerie": "VODOO-3",
       "modelo": "BA",
-      "reservado": "SI",
-      "fecha\r": "25/11/2023\r",
+      "reservado": "NO",
+      "fecha": "",
       "id": 3
     },
     {
-      "numSerie": "112",
+      "numSerie": "VODOO-4",
       "modelo": "BA",
-      "reservado": "SI",
-      "fecha\r": "22/11/2023\r",
+      "reservado": "NO",
+      "fecha": "",
       "id": 4
     },
     {
-      "numSerie": "116",
+      "numSerie": "VODOO-5",
       "modelo": "AB",
       "reservado": "SI",
-      "fecha\r": "26/11/2022",
+      "fecha": "26/11/2022",
       "id": 5
     },
     {
-      "numSerie": "113",
+      "numSerie": "VODOO-6",
       "modelo": "AB",
-      "reservado": "SI",
-      "fecha\r": "23/11/2023\r",
+      "reservado": "NO",
+      "fecha": "",
       "id": 6
     },
     {
-      "numSerie": "114",
+      "numSerie": "VODOO-7",
       "modelo": "AB",
-      "reservado": "SI",
-      "fecha\r": "24/11/2023\r",
+      "reservado": "NO",
+      "fecha": "",
       "id": 7
     }
   ],
