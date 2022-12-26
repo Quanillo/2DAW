@@ -50,6 +50,43 @@
       "id": 7
     }
   ],
+  "user": [
+    {
+      "name": "admin",
+      "pass": "admin",
+      "level": "makina",
+      "admin": true,
+      "id": 1
+    },
+    {
+      "name": "Pablo",
+      "pass": "Passw0rd",
+      "level": "perro",
+      "admin": false,
+      "id": 2
+    },
+    {
+      "name": "Victor",
+      "pass": "Passw0rd",
+      "level": "pakete",
+      "admin": false,
+      "id": 3
+    },
+    {
+      "name": "Arturo",
+      "pass": "Passw0rd",
+      "level": "pakete",
+      "admin": false,
+      "id": 4
+    },
+    {
+      "name": "Juan",
+      "pass": "Passw0rd",
+      "level": "makina",
+      "admin": false,
+      "id": 5
+    }
+  ],
   "profile": {
     "name": "typicode"
   }
