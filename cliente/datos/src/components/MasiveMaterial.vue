@@ -12,21 +12,26 @@
       <li v-for="(el, key) in ficheroErrores" :key="key">{{ el }}</li>
     </ul>
   </div>
-
+  <MaterialList :materialList="materialList" />
 </template>
   
 <script setup>
 import ReadFile from "./ReadFile.vue";
+import MaterialList from "./MaterialList.vue";
 import axios from "axios";
 import { ref } from "vue";
-
-
 
 const fichero = ref([]);
 const ficheroErrores = ref([])
 const terminado = ref(false)
 const progreso = ref(1)
 const emits = defineEmits(['back']);
+
+const props = defineProps({
+  materialList:{
+    type: Array,
+  }
+});
 
 const cargaFichero = (fich) => {
   progreso.value = 1

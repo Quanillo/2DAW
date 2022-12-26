@@ -11,10 +11,10 @@
 -->
   <div v-else>
     <div v-if="user.admin === true">
-      <AdminView  :userList="userList" @back="back"/>
+      <AdminView  :userList="userList" :materialList="materialList" @back="back"/>
     </div>
     <div v-else>
-      <UserView :user="user" @back="back" />
+      <UserView :user="user" :materialList="materialList" @back="back" />
     </div>
   </div>
 
@@ -31,11 +31,12 @@ import UserView from './components/Views/UserView.vue';
 const show = ref('login');
 const user = ref({});
 let userList = ref([]);
-
+let materialList = ref([]);
 
 onMounted(() => {
   getUsers();
-  console.log(userList)
+  getMaterial();
+  
 })
 
 const getUsers = async () => {
@@ -48,6 +49,19 @@ const getUsers = async () => {
     console.log(e)
   }
 }
+
+const getMaterial = async () => {
+  try {
+    const response = await axios.get(
+      `http://localhost:3000/material/`, {
+    })
+    materialList.value = response.data;
+  }
+  catch (e) {
+    console.log(e)
+  }
+}
+
 
 const addUser = async (user) => {
   userList.value.push(user)

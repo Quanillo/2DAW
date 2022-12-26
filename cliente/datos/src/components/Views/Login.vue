@@ -8,7 +8,7 @@
   </div>
   <div>
     <button @click="login">LOGIN</button>
-    <button @click="signup">SIGN UP</button>
+   <!-- <button @click="signup">SIGN UP</button>-->
   </div>
 </template>
   

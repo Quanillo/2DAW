@@ -3,7 +3,7 @@
     <MasiveUsers :userList="userList"  @back="showMasive = ''"/>
   </div>
   <div v-else-if="showMasive === 'Material'">
-    <MasiveMaterial @back="showMasive = ''"/>
+    <MasiveMaterial :materialList="materialList" @back="showMasive = ''"/>
   </div>
   <div v-else>
     <button @click="showMasive = 'Material'">Cargar material</button>
@@ -26,6 +26,9 @@ const props = defineProps({
   userList: {
     type: Array,
   },
+  materialList:{
+    type: Array,
+  }
 });
 
 const showMasive = ref('')
