@@ -1,0 +1,140 @@
+#none{
+    border-style: none;
+}
+
+#dotted{
+    border-style: dotted;
+}
+
+#dashed{
+    border-style: dashed;
+}
+
+#solid{
+    border-style: solid;
+}
+
+#double{
+    border-style: double;
+}
+
+#groove{
+    border-style: groove;
+    border-color: lime;
+}
+
+#ridge{
+    border-style: ridge;
+    border-color: lime;
+}
+
+#inset{
+    border-style: inset;
+    border-color: lime;
+}
+
+#outset{
+    border-style: outset;
+    border-color: lime;
+}
+
+#bottom{
+    border-bottom: solid 1px red;
+    padding: 10px;
+}
+
+
+#rounded{
+    border: solid 1px grey;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+
+#left{
+    background-color:aqua;
+    padding: 10px;
+    border-left: solid 5px blue;
+}
+
+
+#doubletop{
+    border: 2px solid;
+    border-top: double red;
+    padding: 4px;
+}
+
+
+#leftfat{
+    border: 2px solid;
+    border-left: 15px solid ;
+}
+
+
+#one{
+    border: 3px solid blue;
+}
+
+
+#two{
+    border: 3px solid;
+    border-color: red blue;
+}
+
+
+#three{
+    border: 3px solid;
+    border-color: red green blue;
+}
+
+
+#four{
+    border: 3px solid;
+    border-color: red green blue magenta ;
+}
+
+
+#dottedoutline{
+    border: 1px red solid;
+    outline: dotted;
+}
+
+
+#dashedoutline{
+    border: 1px red solid;
+    outline: dashed;
+}
+
+
+#solidoutline{
+    border: 1px red solid;
+    outline: solid;
+}
+
+
+#doubleoutline{
+    border: 1px red solid;
+    outline: double;
+}
+
+
+#grooveoutline{
+    border: 1px red solid;
+    outline: groove;
+}
+
+
+#ridgeoutline{
+    border: 1px red solid;
+    outline: ridge;
+}
+
+#insetoutline{
+    border: 1px red solid;
+    outline: inset;
+}
+
+#outsetoutline{
+    border: 1px red solid;
+    outline: outset;
+}

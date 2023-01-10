@@ -1,0 +1,26 @@
+body{
+    background-color: orange;
+}
+
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    color:blue;
+    background-color: whitesmoke;
+    border: 1px solid;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+img{
+    margin: auto 80px ;
+    width: 100px;
+    height: 100px;
+}
+
+#dos{
+    margin-top: 250px;
+}
+
+#tres{
+    margin-top: 350px;
+}
