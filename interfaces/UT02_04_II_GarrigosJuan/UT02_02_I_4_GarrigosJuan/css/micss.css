@@ -1,17 +1,29 @@
-p.normal{font-style: normal;}
-p.italic{font-style: italic;}
-p.oblique{font-style: oblique;}
+table{
+    border: 1px solid;
+    border-collapse: collapse;
+}
 
-h1{font-size: 40px;}
-h2{font-size: 30px;}
-h3{font-size: 2.5em;}
-h4{font-size: 1.975em;}
-p{font-size: 0.875;}
+thead{
+    width: 100%;
+    height: 100%;
+    background-color: steelblue;
+}
 
-p.normal{font-weight: normal;}
-p.light{font-weight: lighter;}
-p.thick{font-weight: bold;}
-p.thicker{font-weight: 900;}
+td{
+    width: 6em;
+    height: 2em;
+    border: 1px solid grey; 
+    padding-top: 0;
+    padding-bottom: 3em;
+}
 
-p.normal{font-variant: normal;}
-p.small{font-variant: small-caps;}
+.day{
+    border: none;
+    background-color:powderblue;
+    width: 6em;
+    padding-bottom: 0;
+}
+
+.emptyDay{
+    background-color:gainsboro;
+}
