@@ -1,0 +1,41 @@
+*{
+    font-family: Helvetica, Arial, Sans-Serif;
+    font-size: 14px;
+}
+body{
+    color: #666;
+}
+h3{
+    color: maroon;    
+}
+caption{
+    text-align: left;
+}
+table{
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+}
+thead{
+    color: white;
+    background-color: dimgrey;
+    border-radius: 6px;
+}
+
+td:nth-child(even){
+    background-color: whitesmoke;
+}
+tr:hover td{
+    background-color: lightyellow;
+    color: blue;
+}
+
+:checked + label {
+    font-weight: bold;
+    color: red;
+ }
+th, td{
+    padding: .5em;
+}
+tbody td{
+    border: 1px solid lightgrey;
+}
