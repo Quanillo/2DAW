@@ -24,7 +24,7 @@ thead{
 td:nth-child(even){
     background-color: whitesmoke;
 }
-tr:hover td{
+tbody td:hover::td:nth-child(even){
     background-color: lightyellow;
     color: blue;
 }

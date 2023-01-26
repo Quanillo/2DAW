@@ -7,15 +7,15 @@ window.addEventListener('DOMContentLoaded', async ()=>{
     let html = '';
     await onGetDocuments('pets', (docs) =>{
         docs.forEach(doc =>{
-            const {name, race} = doc.data()
-            console.log(doc.data())
-            const id = doc.id 
+            const {name, race} = doc.data();
+            console.log(doc.data());
+            const id = doc.id ;
             html += `
                 <div>
                     <p> Name ${name} </p>
                     <p> Race ${race}</p>
                 </div>
-            `
+            `;
         })
         list.innerHTML += html;
     });
@@ -30,7 +30,7 @@ form.addEventListener('submit', (e)=>{
         <p> Name ${name} </p>
         <p> Race ${race}</p>
     </div>
-    `
+    `;
     imFirebase();
 } )
 /*
