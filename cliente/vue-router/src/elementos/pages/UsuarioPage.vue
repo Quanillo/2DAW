@@ -6,7 +6,7 @@ const route = useRoute();
 
 <template>
     <div>
-        <p>{{route.params.nombre}}</p>
+        <p>{{ route.params.nombre }}</p>
         <p>{{ route.query.apellidos }}</p>
         <p>{{ route.query.nivel }}</p>
     </div>
