@@ -1,0 +1,40 @@
+html, body{
+    width: 100%;
+    height: 100%; 
+    margin:0; 
+}
+#envoltorio{
+    width: 100%;
+    height:100%;
+    margin: 0 auto;
+    background-image: url('images/background.webp');
+    background-repeat: repeat-y;
+    background-size: 140%;
+    background-position: center; 
+}
+#cabecera{
+    background-color: grey;
+    height: 5%;
+    top:0%
+}
+#principal{
+    float: left;
+    width: 26.75%;
+    height: 90%;
+}
+#noticias{
+    float: left;
+    width: 46.5%;
+    height: 90%;
+}
+#extras{
+    float: left;
+    width: 26.75%;
+    height: 90%;
+}
+#pie{
+    clear: left;
+    bottom: 0%;
+    background-color: grey;
+    height: 5%;
+}

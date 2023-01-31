@@ -1,0 +1,32 @@
+#envoltorio{
+    width: 960px;
+    height: 600px;
+    margin: 0 auto;
+    background-image: url('images/background.jpg');
+    background-size: 1300px;
+}
+
+header{
+    height: 30px;
+    background-color: grey;
+}
+
+main{
+    float: left;
+    width: 650px;
+    height: 550px;
+    margin: 0 20px;
+}
+
+#extras{
+    float: left;
+    width: 250px;
+    height: 550px;
+    margin: 0 20px 0 0;
+}
+
+footer{
+    height: 30px;
+    background-color: grey;
+    clear: left;
+}
