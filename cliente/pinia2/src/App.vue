@@ -5,7 +5,15 @@ import CabeceraPrincipal from "@/components/CabeceraPrincipal.vue";
 </script>
 <template>
   <CabeceraPrincipal titulo="Mi práctica favorita" />
-  <NavBar :links="['Inicio', 'Menú de cursos', 'Lista de cursos','Servicios','Iniciar Sesión']" />
+  <NavBar :links="[
+    'Inicio',
+    'Sobre Nosotros',
+    'Prueba Store',
+    'Prueba Store2',
+    'Listado',
+    'Acciones Listado',
+    'Iniciar Sesión'
+    ]" />
 
   <div id="principal">
     <div id="contenedor">

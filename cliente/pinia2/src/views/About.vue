@@ -4,9 +4,9 @@
 
 
 <template>
-    <h1>Inicio</h1>
-
-    <p>Añade superheroes a tu lista y guardalos!</p>
+    <div>
+        <h1>Sobre Nosotros</h1>
+    </div>
 </template>
 
 

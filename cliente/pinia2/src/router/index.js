@@ -1,7 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Inicio from "@/views/Inicio.vue"
 import LoginLogout from "@/views/LoginLogout.vue"
-import Servicios from "@/views/Servicios.vue"
+import PruebaStore from "@/views/PruebaStore.vue"
+import Listado from "@/views/Listado.vue"
+import AccionesListado from "@/views/AccionesListado.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -23,29 +25,24 @@ const router = createRouter({
       component: () => import("@/views/About.vue"),
     },
     {
-      path: "/Servicios",
-      name: "Servicios",
-      component: Servicios,
+      path: "/PruebaStore",
+      name: "Prueba Store",
+      component: PruebaStore,
     },
     {
-      path: "/List",
-      name: "Lista",
-      component: () => import("@/views/List.vue"),
+      path: "/PruebaStore",
+      name: "Prueba Store2",
+      component: () => import ("@/views/PruebaStore2.vue"),
     },
     {
-      path: "/Form",
-      name: "Form",
-      component: () => import("@/views/Form.vue"),
+      path: "/Listado",
+      name: "Listado",
+      component: Listado,
     },
     {
-      path: "/ListaCursos",
-      name: "Menú de cursos",
-      component: () => import("@/views/ManageCursos.vue"),
-    },
-    {
-      path: "/ManageCursos",
-      name: "Lista de cursos",
-      component: () => import("@/views/ListaCursos.vue"),
+      path: "/AccionesListado",
+      name: "Acciones Listado",
+      component: AccionesListado,
     },
     {
       path: "/:pathMatch(.*)*",
