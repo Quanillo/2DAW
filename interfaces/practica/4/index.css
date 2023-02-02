@@ -19,22 +19,37 @@ html, body{
 }
 #principal{
     float: left;
-    width: 26.75%;
+    width: 43.5%;
     height: 90%;
+    padding: 1.5%;
+    border-left: solid 2px darkturquoise;
+    border-right: solid 2px darkturquoise;
 }
 #noticias{
-    float: left;
-    width: 46.5%;
+    float: right;
+    width: 23.7%;
     height: 90%;
+    padding: 1.5%;
 }
 #extras{
     float: left;
-    width: 26.75%;
+    width: 23.5%;
     height: 90%;
+    padding: 1.5%;
 }
 #pie{
     clear: left;
     bottom: 0%;
     background-color: grey;
     height: 5%;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0; 
+    margin: 0; 
+}
+
+li{
+    margin-bottom: 20px;  
 }

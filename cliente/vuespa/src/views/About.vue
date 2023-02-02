@@ -5,7 +5,9 @@
 
 <template>
     <div>
-        <h1>Sobre Nosotros</h1>
+        <h1>Añade superheroes</h1>
+        <input type="text">
+        <button>enviar</button>
     </div>
 </template>
 
