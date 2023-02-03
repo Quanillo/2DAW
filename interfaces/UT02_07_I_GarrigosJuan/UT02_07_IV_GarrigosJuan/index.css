@@ -1,0 +1,60 @@
+html, body{
+    width: 100%;
+    height: 100%; 
+    margin:0;
+}
+#envoltorio{
+    width: 100%;
+    height:100%;
+    margin: 0 auto;
+    background-image: url('images/background.webp');
+    background-repeat: repeat-y;
+    background-size: 140%;
+    background-position: center; 
+}
+#cabecera{
+    background-color: grey;
+    height: 5%;
+    top:0%
+}
+#principal{
+    float: left;
+    width: 43.5%;
+    height: 90%;
+    padding: 1.5%;
+    border-left: solid 2px darkturquoise;
+    border-right: solid 2px darkturquoise;
+    overflow: hidden;
+}
+#noticias{
+    float: right;
+    width: 23.7%;
+    height: 90%;
+    padding: 1.5%;
+}
+#extras{
+    float: left;
+    width: 23.5%;
+    height: 90%;
+    padding: 1.5%;
+}
+#pie{
+    clear: left;
+    bottom: 0%;
+    background-color: grey;
+    height: 5%;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0; 
+    margin: 0; 
+}
+
+li{
+    margin-bottom: 20px;  
+}
+
+#cabecera h1{
+    margin:0;
+}

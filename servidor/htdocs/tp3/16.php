@@ -1,25 +1,24 @@
 <?php
-
-    $arr1 = [1,2,3,4,5];
-
-    function inversoPushPop($arr){
-        $resultado = [];
-        for($i=0;$i< count($arr); $i++){
-            array_push($resultado,array_pop($arr[$i]));
+    $lista1 = array(1,2,3,4,5);
+    function metodo1($lista){
+        $resultado = array();
+        $longitud = count($lista);
+        for($i=0;$i<$longitud;$i++){
+            array_push($resultado,array_pop($lista));
+            echo $resultado[$i]." ";
         }
     }
-
-    $arr2 = [1,2,3,4];
+    $lista2 = array(1,2,3,4);
     
-    function inversoUnshiftShift($arr){
-        $resultado = [];
-        for($i=0; $i<count($arr) ;$i++){
-            array_shift($resultado,array_unshift($arr[$i]));
+    function metodo2($lista){
+        $resultado = array();
+        $longitud = count($lista);
+        for($i=0;$i<$longitud;$i++){
+            array_unshift($resultado,array_shift($lista));
+            echo $resultado[$i]." ";
         }
     }
-    echo inversoPushPop($arr1);
+    echo metodo1($lista1);
     echo "<br>";
-    echo inversoUnshiftShift($arr2);
-    
-
+    echo metodo2($lista2);
 ?>

@@ -1,12 +1,9 @@
 <?php 
-require_once("Alumno.php");
 
     $nombre = $_POST['nombre'];
-    $primer_apellido = $_POST['primer_apellido'];
-    $segundo_apellido = $_POST['segundo_apellido'];
-    $dni = $_POST['dni'];
+    $mail = $_POST['mail'];
 
-    $alumnos = [];
+    $usuarios = [];
     //datos de conexión
     $servername = "localhost";
     $username = "testuser";
@@ -19,7 +16,7 @@ require_once("Alumno.php");
     die("Conexión fallida: " . $conn->connect_error);
     }
 
-    $sql = "INSERT INTO alumnos (nombre, primer_apellido, segundo_apellido, dni) VALUES ('$nombre', '$primer_apellido', '$segundo_apellido', '$dni')";
+    $sql = "INSERT INTO usuarios (nombre, mail) VALUES ('$nombre', '$mail')";
 
     if ($conn->query($sql) == TRUE) {
         echo "New record created successfully <br>";
@@ -27,23 +24,17 @@ require_once("Alumno.php");
         echo "Error: " . $sql . "<br>" . $conn->error . "<br>";
     }
 
-    $sql2 = "SELECT nombre, primer_apellido, segundo_apellido, dni FROM alumnos";
+    $sql2 = "SELECT ID, nombre, mail FROM usuarios";
 
     $result = $conn->query($sql2);
     
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
-            array_push($alumnos, new Alumno($row["nombre"], $row["primer_apellido"], $row["segundo_apellido"], $row["dni"]));
-        }
+            echo "ID: " . $row["ID"]. " - Nombre: " . $row["nombre"]. " - mail: " . $row["mail"]. "<br>";
+            }
     } else {
     echo "0 results";
     }
-
-    echo "Listado de alumnos <br><br><br>";
-    foreach ($alumnos as $alumno) {
-        echo $alumno->pinta_alumno();
-    }
-
     
     $conn->close();
 

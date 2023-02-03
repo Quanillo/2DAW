@@ -13,6 +13,8 @@ import {
   setDoc,
   getDoc,
   updateDoc,
+  query,
+  where
 } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js";
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -36,3 +38,17 @@ export const getDocuments = (ref) => getDocs(collection(db, ref));
 export const onGetDocuments = (ref, callback) => onSnapshot(collection(db, ref), callback);
 
 export const addUserDB = async (user) => await addDoc(collection(db, "user"), user);
+
+
+
+
+export const getUserDB = async (name) => {
+  const q = query(collection(db, "user"), where("name", "==", name));
+  const querySnapshot = await getDocs(q);
+  const res = []
+  querySnapshot.forEach((doc) => {
+    //console.log(doc.id, " => ", doc.data());
+    res.push(doc)
+  });
+  return res
+}
