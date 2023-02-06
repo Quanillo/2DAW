@@ -1,7 +1,10 @@
 <script setup>
 import { RouterView } from "vue-router";
+import { useUserList } from '@/stores/user.js'
 import NavBar from "@/components/NavBar.vue";
 import CabeceraPrincipal from "@/components/CabeceraPrincipal.vue";
+
+const userList = useUserList()
 </script>
 <template>
   <CabeceraPrincipal titulo="TodoApp" />
