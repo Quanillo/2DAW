@@ -9,9 +9,8 @@ const name = ref('')
 const pass = ref('')
 
 const addUser = async () => {
-    userList.addUser({name: name.value, pass: pass.value})
     let a = await getUserDB(name.value)
-    a.map(x=>console.log(x.data))
+    console.log(a[0])
 }
 </script>
 

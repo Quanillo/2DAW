@@ -1,0 +1,17 @@
+{
+    "servidores": [
+      {
+        "id":1,
+        "url": "ws:/localhost:8080"
+      },
+      {
+       "id":2,
+       "url": "ws:/localhost:8081"
+      },
+      {
+        "id":3,
+        "url": "ws:/localhost:8082"
+       }
+     
+    ]
+  }

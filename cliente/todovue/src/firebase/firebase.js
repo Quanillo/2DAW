@@ -48,7 +48,8 @@ export const getUserDB = async (name) => {
   const res = []
   querySnapshot.forEach((doc) => {
     //console.log(doc.id, " => ", doc.data());
-    res.push(doc)
+    res.push(doc.data())
   });
+  //console.log(res)
   return res
 }
