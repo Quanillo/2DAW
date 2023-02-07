@@ -5,10 +5,17 @@ import NavBar from "@/components/NavBar.vue";
 import CabeceraPrincipal from "@/components/CabeceraPrincipal.vue";
 
 const userList = useUserList()
+
 </script>
 <template>
   <CabeceraPrincipal titulo="TodoApp" />
-  <NavBar :links="['Inicio', 'Manage Todo', 'Todo List', 'Iniciar Sesión']" />
+  <div v-if="userList.mainUser === null">
+    <NavBar :links="['Inicio', 'Sobre Nosotros', 'Iniciar Sesión']" />
+  </div>
+  <div v-else>
+    <NavBar :links="['Inicio', 'Manage Todo', 'Todo List', 'Logout']" />
+  </div>
+  
 
   <div id="principal">
     <div id="contenedor">

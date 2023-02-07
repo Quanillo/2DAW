@@ -36,20 +36,33 @@ export const imFirebase = () => console.log('firebase');
 export const getDocuments = (ref) => getDocs(collection(db, ref));
 
 export const onGetDocuments = (ref, callback) => onSnapshot(collection(db, ref), callback);
-
+//users
 export const addUserDB = async (user) => await addDoc(collection(db, "user"), user);
-
-
-
 
 export const getUserDB = async (name) => {
   const q = query(collection(db, "user"), where("name", "==", name));
   const querySnapshot = await getDocs(q);
   const res = []
   querySnapshot.forEach((doc) => {
-    //console.log(doc.id, " => ", doc.data());
-    res.push(doc.data())
+    const aux = doc.data()
+    aux.id = doc.id
+    res.push(aux)
   });
   //console.log(res)
   return res
+}
+
+//todos
+export const addTodoDB = (user, todo) => {
+  const docRef = doc(db, "user", user.id);
+  const colRef = collection(docRef, "todos")
+  addDoc(colRef, todo);
+}
+
+export const getTodoDB = (user) => {
+  const todos = []
+  onSnapshot(collection(db, `/user/${user.id}/todos`), (docs)=>{
+    docs.forEach(x=>todos.push(x.data()))
+  });
+  return todos
 }

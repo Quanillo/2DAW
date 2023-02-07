@@ -1,16 +1,21 @@
 <script setup>
 import { useTodoList } from '@/stores/todo.js'
+import { useUserList } from '@/stores/user.js'
+import { addTodoDB } from '@/firebase/firebase.js'
 import { ref } from 'vue'
 
 const todoList = useTodoList()
+const userList = useUserList()
 
-const id = ref('')
 const name = ref('')
 const des = ref('')
 const date = ref('')
 
 const addTodo = () => {
-    todoList.addTodo({id: id.value, name: name.value, des: des.value, date: date.value})
+    addTodoDB(userList.mainUser, {name: name.value, des: des.value, date: date.value})
+    name.value = ''
+    des.value = ''
+    date.value = ''
 }
 </script>
 
@@ -18,8 +23,6 @@ const addTodo = () => {
 <template>
     <div>
         <h1>Crear Todo!</h1>
-            <p>id</p>
-            <input v-model.trim="id"  type="text">
             <p>nombre de la tarea</p>
             <input v-model.trim="name"  type="text">
             <p>descripción</p>

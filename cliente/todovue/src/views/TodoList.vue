@@ -1,18 +1,21 @@
 <script setup>
-import { useTodoList } from '@/stores/todo.js'
+import { ref } from 'vue'
 
-const todoList = useTodoList()
+import { useUserList } from '@/stores/user.js'
+import { getTodoDB } from '@/firebase/firebase.js'
 
-const deleteTodo = (todo) => todoList.deleteTodo(todo)
+const userList = useUserList()
+const todoList = getTodoDB(userList.mainUser)
 
+console.log(todoList)
 </script>
 
 
 <template>
     <div>
-        <h1>Todo List:</h1>
-        <ul v-for="(todo, index) in todoList.showTodoList" :key="index">
-        <li>{{ todo.name }} {{ todo.des }} {{ todo.date }}<button @click="deleteTodo(todo)">delete</button> </li>
+        <h1>Lista de tareas de {{ userList.mainUser.name }}</h1>
+            <ul v-for="(todo, index) in todoList" :key="index">
+        <li><b>{{ todo.name }}</b> {{ todo.des }} <i>{{ todo.date }}</i> </li>
     </ul>
 
     </div>
