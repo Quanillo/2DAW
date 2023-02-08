@@ -11,3 +11,10 @@ export const useUserList = defineStore('userList', () => {
 
   return { userList, addUser, showUserList, deleteUser, mainUser, setMainUser }
 })
+
+export const useMainUser = defineStore('mainUser', () => {
+  const mainUser = ref(null)
+  const setMainUser = (user) => mainUser.value = user;
+
+  return { mainUser, setMainUser }
+})

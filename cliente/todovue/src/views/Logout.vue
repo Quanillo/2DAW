@@ -1,23 +1,23 @@
 <script setup>
-import { useUserList } from '@/stores/user.js'
 import { useRouter } from 'vue-router'
+import { useMainUser } from '@/stores/user.js'
 import { ref } from 'vue'
 import { getUserDB } from '@/firebase/firebase.js'
 
-const userList = useUserList()
+const mainUser = useMainUser()
 const router = useRouter()
 
 const logout = () => {
-    userList.setMainUser(null)
+    mainUser.setMainUser(null)
     router.push({name: 'Inicio'})
 }
 </script>
 
 
 <template>
-    <div v-if="userList.mainUser != null">
+    <div v-if="mainUser.mainUser != null">
         <h1>Cerrar Sesión</h1>
-        <p>Estas seguro de cerrar sesión <b>{{ userList.mainUser.name }} </b> ?</p>
+        <p>Estas seguro de cerrar sesión <b>{{ mainUser.mainUser.name }} </b> ?</p>
         <button @click="logout">Cerrar sesión</button>
     </div>
 </template>

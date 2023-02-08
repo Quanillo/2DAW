@@ -1,15 +1,16 @@
 <script setup>
 import { RouterView } from "vue-router";
 import { useUserList } from '@/stores/user.js'
+import { useMainUser } from '@/stores/user.js'
 import NavBar from "@/components/NavBar.vue";
 import CabeceraPrincipal from "@/components/CabeceraPrincipal.vue";
 
 const userList = useUserList()
-
+const mainUser = useMainUser()
 </script>
 <template>
   <CabeceraPrincipal titulo="TodoApp" />
-  <div v-if="userList.mainUser === null">
+  <div v-if="mainUser.mainUser === null">
     <NavBar :links="['Inicio', 'Sobre Nosotros', 'Iniciar Sesión']" />
   </div>
   <div v-else>

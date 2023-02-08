@@ -3,7 +3,8 @@ const misRespuestas = document.getElementById('respuestas')
 const btnConnect = document.getElementById('btnConnect')
 const btnDisconnect = document.getElementById('btnDisconnect')
 const ipList = document.getElementById('ipList')
-
+const msgButton = document.getElementById('buttonmsg')
+let newMsgs = []
 
 window.addEventListener('DOMContentLoaded', async () => {
     try {
@@ -15,6 +16,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         option.text = x.url;
         ipList.add(option)
     });
+    msgButton.style.display = 'none'
     }
     catch (e) {
       console.log(e)
@@ -38,7 +40,7 @@ const  message = async (evento) => {
     console.log("WebSocket ha recibido un mensaje");
     // Mostrar mensaje en HTML
     const mensajeRecibido = await evento.data 
-    misRespuestas.innerHTML = misRespuestas.innerHTML.concat(mensajeRecibido, '<br>');
+    newMsgs.push(mensajeRecibido)
 }
 
 const  error =  (evento) => {
@@ -58,6 +60,7 @@ const enviarNuevoMensaje = (evento) => {
         miWebSocket.send(miNuevoMensaje.value);
         // Borra texto en el input
         miNuevoMensaje.value = '';
+        msgButton.style.display = 'block'
     }
 }
 
@@ -74,6 +77,16 @@ btnConnect.addEventListener('click', ()=>{
     miWebSocket.addEventListener('error', error);
     miWebSocket.addEventListener('close', close);
 });
+
+msgButton.addEventListener('click', ()=>{
+    console.log(newMsgs)
+    newMsgs.forEach(x=>{
+        misRespuestas.innerHTML = misRespuestas.innerHTML.concat( x, '<br>');
+    })
+    newMsgs = []
+    msgButton.style.display = 'none'
+})
+
 
 ipList.addEventListener('click', ()=>{
     servidorWS = ipList.options[ipList.selectedIndex].text;

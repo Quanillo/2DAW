@@ -1,10 +1,10 @@
 <script setup>
-import { useUserList } from '@/stores/user.js'
+import { useMainUser } from '@/stores/user.js'
 import { useRouter } from 'vue-router'
 import { ref } from 'vue'
 import { getUserDB } from '@/firebase/firebase.js'
 
-const userList = useUserList()
+const mainUser = useMainUser()
 const router = useRouter()
 
 const name = ref('')
@@ -14,8 +14,9 @@ const err = ref('')
 const userLoged = async () => {
     let a = await getUserDB(name.value)
     a.forEach(element => {
-        if(element.pass == pass.value)
-            userList.setMainUser(element)
+        if(element.pass == pass.value){
+            mainUser.setMainUser(element)
+        }
             router.push({name: 'Inicio'}) 
     });
 }
@@ -29,7 +30,7 @@ const userLoged = async () => {
             <input v-model.trim="name"  type="text">
             <p>contraseña</p>
             <input v-model.trim="pass"  type="password">
-            <button @click="userLoged">enviar</button>
+            <button @click="userLoged" @keypress="enter">enviar</button>
         </div>
         <div v-if="err!=''">
             <p>{{ err }}</p>

@@ -1,18 +1,16 @@
 <script setup>
-import { useTodoList } from '@/stores/todo.js'
-import { useUserList } from '@/stores/user.js'
+import { useMainUser } from '@/stores/user.js'
 import { addTodoDB } from '@/firebase/firebase.js'
 import { ref } from 'vue'
 
-const todoList = useTodoList()
-const userList = useUserList()
+const mainUser = useMainUser()
 
 const name = ref('')
 const des = ref('')
 const date = ref('')
 
 const addTodo = () => {
-    addTodoDB(userList.mainUser, {name: name.value, des: des.value, date: date.value})
+    addTodoDB(mainUser.mainUser, {name: name.value, des: des.value, date: date.value})
     name.value = ''
     des.value = ''
     date.value = ''
