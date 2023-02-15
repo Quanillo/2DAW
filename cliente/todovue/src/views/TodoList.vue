@@ -1,9 +1,11 @@
 <script setup>
 import { useMainUser } from '@/stores/user.js'
+import { useTodoList } from '@/stores/todo.js'
 import { getTodoDB } from '@/firebase/firebase.js'
 import { onMounted } from 'vue';
 import { ref } from 'vue'
 
+const todoListP = useTodoList()
 const mainUser = useMainUser()
 const todoList = ref([])
 const loaded = ref(false)
@@ -20,7 +22,7 @@ onMounted(() => {
     <div>
         <h1>Lista de tareas de {{ mainUser.mainUser.name }}</h1>
         <div v-if="loaded">
-            <ul v-for="(todo, index) in todoList " :key="index">
+            <ul v-for="(todo, index) in todoListP.todoList" :key="index">
             <li>{{ todo.name }}</li>
         </ul>
         </div>

@@ -1,9 +1,11 @@
 <script setup>
 import { useMainUser } from '@/stores/user.js'
+import { useTodoList } from '@/stores/todo.js'
 import { useRouter } from 'vue-router'
 import { ref } from 'vue'
-import { getUserDB } from '@/firebase/firebase.js'
+import { getUserDB, getTodoDB } from '@/firebase/firebase.js'
 
+const todoListP = useTodoList()
 const mainUser = useMainUser()
 const router = useRouter()
 
@@ -16,8 +18,18 @@ const userLoged = async () => {
     a.forEach(element => {
         if(element.pass == pass.value){
             mainUser.setMainUser(element)
+            getTodoDB(element.id, (qs)=>{
+                const list = []
+                qs.forEach((doc)=>{
+                    const todo = doc.data()
+                    todo.id = doc.id
+                    list.push(todo)
+                })
+                todoListP.setTodoList(list)
+                //console.log(list)
+            })
         }
-            router.push({name: 'Inicio'}) 
+        router.push({name: 'Inicio'}) 
     });
 }
 </script>

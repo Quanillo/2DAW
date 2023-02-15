@@ -59,10 +59,13 @@ export const addTodoDB = (user, todo) => {
   addDoc(colRef, todo);
 }
 
-export const getTodoDB = (user) => {
+export const getTodoDB2 = (user) => {
   const todos = []
   onSnapshot(collection(db, `/user/${user.id}/todos`), (docs)=>{
     docs.forEach(x=>todos.push(x.data()))
   });
   return todos
 }
+
+export const getTodoDB = (user, callback) => 
+  onSnapshot(collection(db, `/user/${user.id}/todos`), callback);
