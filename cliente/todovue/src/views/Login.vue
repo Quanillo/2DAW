@@ -18,7 +18,7 @@ const userLoged = async () => {
     a.forEach(element => {
         if(element.pass == pass.value){
             mainUser.setMainUser(element)
-            getTodoDB(element.id, (qs)=>{
+            getTodoDB(mainUser.mainUser, (qs)=>{
                 const list = []
                 qs.forEach((doc)=>{
                     const todo = doc.data()
@@ -26,7 +26,7 @@ const userLoged = async () => {
                     list.push(todo)
                 })
                 todoListP.setTodoList(list)
-                //console.log(list)
+                console.log(list)
             })
         }
         router.push({name: 'Inicio'}) 

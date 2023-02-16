@@ -3,17 +3,18 @@ import { useMainUser } from '@/stores/user.js'
 import { addTodoDB } from '@/firebase/firebase.js'
 import { ref } from 'vue'
 
+
 const mainUser = useMainUser()
 
 const name = ref('')
 const des = ref('')
-const date = ref('')
+const date = ref(null)
 
 const addTodo = () => {
     addTodoDB(mainUser.mainUser, {name: name.value, des: des.value, date: date.value})
     name.value = ''
     des.value = ''
-    date.value = ''
+    date.value = new Date()
 }
 </script>
 
@@ -26,7 +27,7 @@ const addTodo = () => {
             <p>descripción</p>
             <input v-model.trim="des"  type="text">
             <p>fecha</p>
-            <input v-model.trim="date"  type="text">
+            <input v-model.trim="date"  type="datetime-local">
             <button @click="addTodo">enviar</button>
 
     </div>

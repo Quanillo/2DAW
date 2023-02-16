@@ -7,24 +7,17 @@ import { ref } from 'vue'
 
 const todoListP = useTodoList()
 const mainUser = useMainUser()
-const todoList = ref([])
-const loaded = ref(false)
-
-onMounted(() => {
-    todoList.value =  getTodoDB(mainUser.mainUser)
-    console.log(todoList.value)
-    loaded.value = true;
-})
 
 </script>
 
 <template>
     <div>
         <h1>Lista de tareas de {{ mainUser.mainUser.name }}</h1>
-        <div v-if="loaded">
-            <ul v-for="(todo, index) in todoListP.todoList" :key="index">
-            <li>{{ todo.name }}</li>
-        </ul>
+       
+        <div v-for="(todo, index) in todoListP.todoList" :key="index">
+            <h3>{{ todo.name }}</h3>
+            <p>{{ todo.des }}</p>
+            <p>{{ todo.date }}</p>
         </div>
 
     </div>
