@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Spectral+SC:400,700');
+
+
+div, header, main, footer,section, nav, article, figure {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+img, iframe {
+  width: 100%;
+  height: auto;
+}
+

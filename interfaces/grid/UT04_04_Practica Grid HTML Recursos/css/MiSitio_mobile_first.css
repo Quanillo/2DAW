@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Spectral+SC:400,700');
+
+
+div, header, main, footer,section, nav, article, figure {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+img, iframe {
+  width: 100%;
+  height: auto;
+}
+header{
+    width: auto;
+    height: 13em;
+    text-align: center;
+    align-content: center;
+}
+header>div{
+    background-color: grey;
+    padding: 2em;
+    border-top: .2em solid black;  
+    border-bottom: .2em solid black; 
+}
+
+nav{
+    height: 5em;
+    width: auto;
+    margin: 0 auto;
+}
+
+ul{
+
+}
+
+li{
+    float: left;
+    list-style: none;
+    margin: 0.2em;
+}
+a{
+    text-decoration: none;
+    background-color:royalblue;
+    color: white;
+    padding: 10px;
+}

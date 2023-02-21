@@ -45,12 +45,11 @@ article{
 }
 
 article>div{
+    margin:  0 auto;
     width: 40rem;
     height: 3rem;
     overflow: hidden;
     position: relative;
-    left: 20%;
-    right: 20%;
 }
 article>div>img:nth-child(2){
     float:left;
@@ -84,11 +83,11 @@ main{
     font-size: 1.5rem;
 }
 main div{
+    margin:  0 auto;
+    width: 40rem;
     height: 8rem;
     overflow: hidden;
     position: relative;
-    left: 20%;
-    right: 20%;
 }
 main>div>span:first-child{
     margin-top: 1em;
