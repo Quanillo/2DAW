@@ -9,7 +9,10 @@ div, header, main, footer,section, nav, article, figure {
   padding: 0;
   box-sizing: border-box; 
 }
-
+body>div{
+  height: 100%;
+  overflow-y: auto;
+}
 img, iframe {
   width: 100%;
   height: auto;
@@ -63,7 +66,7 @@ a{
 }
 
 main{
-
+  width: 100%;
 }
 
 main>figure>figcaption{
@@ -166,27 +169,31 @@ footer>div>span:nth-child(6)>img{
   
     header{
         width: auto;
-        height: 13em;
+        height: 6.5em;
         text-align: center;
         align-content: center;
         margin: 0 auto;
+        margin-bottom: 1em;
     }
     header>div{
+        float: left;
+        width: 40%;
         background-color: grey;
-        padding: 3em;
+        padding: 2em;
         border-top: .2em solid black;  
         border-bottom: .2em solid black; 
     }
     h1{
         margin: 0;
-        font-size: 3em;
+        font-size: 2em;
     }
     nav{
+      float:right;
         margin: 0 auto;
-        height: 3em;
-        width: 100%;
+        height: 4em;
+        width: 60%;
         overflow: hidden;
-        padding-top: 0.5em;
+        padding-top: 1.5em;
     }
     
     ul{
@@ -215,26 +222,26 @@ footer>div>span:nth-child(6)>img{
       main{
         
         float: left;
-        padding: 1em;
+        padding: 0em;
         padding-top: 0em;
       }
       
       main>figure>figcaption{
         background-color: royalblue;
         color: whitesmoke;
-        font-size: 2em;
+        font-size: 1.8em;
         padding: 0.5em;
       }
       section:nth-of-type(2){
-        height: 25em;
-        width: max-content;
-        font-size: 1.5em;
+        height: 50em;
+        width: 100%;
+        font-size: 1em;
         margin: 0 auto;
       }
       section:nth-of-type(2)>article{
         float: left;
         height: 25em;
-        width: 12em;
+        width: 50%;
         padding: 1em;
         margin: 0 auto;
       }
@@ -244,7 +251,7 @@ footer>div>span:nth-child(6)>img{
         text-align: center;
         margin: 1em 0 1em 0;
         padding: 1em 0 1em 0;
-        font-size: 1.5em;
+        font-size: 1.2em;
       }
       
       section>article>figure>figcaption{
@@ -261,9 +268,9 @@ footer>div>span:nth-child(6)>img{
       section:last-of-type{
         background-color: lightgray;
         text-align: center;
-        margin: 1em 0 1em 0;
+        margin: 0 0 1em 0;
         padding: 1em 0 1em 0;
-        font-size: 1.5em;
+        font-size: 1.2em;
       }
       
       
@@ -279,7 +286,7 @@ footer>div>span:nth-child(6)>img{
         text-align: center;
         margin:0;
         padding-top: 0.5em;
-        font-size: 1.5em;
+        font-size: 1.2em;
       }
       footer>div:nth-child(2){
         float: right;
@@ -340,11 +347,182 @@ footer>div>span:nth-child(6)>img{
   ##Screen = B/w 768px to 1024px
 */
 
-@media (min-width: 650) and (max-width: 980px) {
+@media (min-width: 650px) and (max-width: 980px) {
+
+  header{
+    width: auto;
+    height: 6.5em;
+    text-align: center;
+    align-content: center;
+    margin: 0 auto;
+    margin-bottom: 1em;
+}
+header>div{
+    float: left;
+    width: 40%;
+    background-color: grey;
+    padding: 2em;
+    border-top: .2em solid black;  
+    border-bottom: .2em solid black; 
+}
+h1{
+    margin: 0;
+    font-size: 2em;
+}
+nav{
+  float:right;
+    margin: 0 auto;
+    height: 4em;
+    width: 60%;
+    overflow: hidden;
+    padding-top: 1.5em;
+}
+
+ul{
+    margin: 0 auto;
+    height: 100%;
+    width: max-content;
+    padding: 0;
+}
+
+li{
+    height: 100%;
+    float: left;
+    list-style: none;
+    margin: 0.2em;
+    margin-bottom: 0;
+}
+a{
+    float: left;
+    text-decoration: none;
+    background-color:royalblue;
+    color: whitesmoke;
+    padding: 5px 10px 5px 10px;
+    font-size: 1em;
+}
   
-    /* CSS */
+  main{
     
+    float: left;
+    padding: 0em;
+    padding-top: 0em;
   }
+  
+  main>figure>figcaption{
+    background-color: royalblue;
+    color: whitesmoke;
+    font-size: 1.8em;
+    padding: 0.5em;
+  }
+  section:nth-of-type(2){
+    height: 23em;
+    width: 100%;
+    font-size: 1.2em;
+    margin: 0 auto;
+  }
+  section:nth-of-type(2)>article{
+    float: left;
+    height: 25em;
+    width: 33%;
+    padding: 0.5em;
+    margin: 0 auto;
+  }
+  
+  section:first-of-type{
+    background-color: lightgray;
+    text-align: center;
+    margin: 1em 0 1em 0;
+    padding: 1em 0 1em 0;
+    font-size: 1.2em;
+  }
+  
+  section>article>figure>figcaption{
+    color: royalblue;
+    font-size: 1.5em;
+  }
+  
+  article>p{
+    font-size: 1em;
+    padding: 0 0 2em 0;
+    margin: 0;
+  }
+  
+  section:last-of-type{
+    background-color: lightgray;
+    text-align: center;
+    margin: 0 0 1em 0;
+    padding: 1em 0 1em 0;
+    font-size: 1.2em;
+  }
+  
+  
+  footer{
+    float:right;
+    height: 100%;
+    width: 100%;
+    background-color:powderblue;
+    margin: 0 auto;
+  }
+  footer>div>p{
+    float:left;
+    text-align: center;
+    margin:0;
+    padding-top: 0.5em;
+    font-size: 1.2em;
+  }
+  footer>div:nth-child(2){
+    float: right;
+    width: max-content;
+    margin: 0 auto;
+  }
+  footer>div>span{
+    display: inline-block; 
+    overflow: hidden;
+    height: 3em;
+    width: 3em;
+  }
+  footer>div>span:first-child>img{
+    height: 6em;
+    width: 8em;
+    margin-top: -3rem;
+    margin-left: -5rem;
+  }
+  footer>div>span:nth-child(2)>img{
+    height: 6em;
+    width: 8em;
+    margin-bottom: 0rem;
+    margin-left: -5rem;
+  }
+  footer>div>span:nth-child(3)>img{
+    height: 6em;
+    width: 8em;
+    margin-top: -3rem;
+    margin-left: -2.5rem;
+  }
+  footer>div>span:nth-child(4)>img{
+    height: 6em;
+    width: 8em;
+    margin-top: -3rem;
+    margin-left: 0rem;
+  }
+  footer>div>span:nth-child(5)>img{
+  
+    height: 6em;
+    width: 8em;
+    margin-bottom: 0rem;
+    margin-left: -2.5rem;
+  
+  }
+  footer>div>span:nth-child(6)>img{
+    height: 6em;
+    width: 8em;
+    margin-bottom: 0rem;
+    margin-top: 0rem;
+    margin-left: 0rem;
+  }
+  
+    
+}
 
 
 /* 
@@ -352,179 +530,180 @@ footer>div>span:nth-child(6)>img{
   ##Screen = 1281px to higher resolution desktops
 */
 
-@media (min-width: 1281px) {
-    header{
-        float: left;
-        width: 20%;
-        height: 100%;
-        text-align: center;
-        align-content: center;
-        margin: 0 auto;
-        padding-top: 0em;
-      }
-      header>div{
-        background-color: grey;
-        padding: 3em;
-        border-top: .2em solid black;  
-        border-bottom: .2em solid black; 
-      }
-      h1{
-        margin: 0;
-        font-size: 3em;
-      }
-      nav{
-        height: 100%;
-        width: 100%;
-        overflow: hidden;
-        padding-top: 0.5em;
-      }
+@media (min-width: 981px) {
+  header{
+    float: left;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    align-content: center;
+    margin: 0 auto;
+    padding: 1em;
+    padding-top: 0em;
+  }
+  header>div{
+    background-color: grey;
+    padding: 3em;
+    border-top: .2em solid black;  
+    border-bottom: .2em solid black; 
+  }
+  h1{
+    margin: 0;
+    font-size: 3em;
+  }
+  nav{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 0.5em;
+  }
+  
+  ul{
+    height: 100%;
+    width: max-content;
+  }
+  
+  li{
+    height: 2.2em;
+    width: 100%;
+    list-style: none;
+    margin: 0.2em;
+    margin-bottom: 0;
+    margin-bottom: 0.5em;
+    text-align: start;
+    font-size: 1.2em;
+  }
+  a{
+    float: left;
+    height: 1.8em;
+    width: 17em;
+    text-decoration: none;
+    background-color:royalblue;
+    color: whitesmoke;
+    padding: 5px 10px 5px 10px;
+    font-size: 1em;
+  }
+  
+  main{
+    width: 80%;
+    float: left;
+    padding: 1em;
+    padding-top: 0em;
+  }
+  
+  main>figure>figcaption{
+    background-color: royalblue;
+    color: whitesmoke;
+    font-size: 2em;
+    padding: 0.5em;
+  }
+  section:nth-of-type(2){
+    height: 25em;
+    width: 100%;
+    font-size: 1.5em;
+    margin: 0 auto;
+  }
+  section:nth-of-type(2)>article{
+    float: left;
+    height: 25em;
+    width: 33%;
+    padding: 0.5em;
+    margin: 0 auto;
+  }
+  
+  section:first-of-type{
+    background-color: lightgray;
+    text-align: center;
+    margin: 1em 0 1em 0;
+    padding: 1em 0 1em 0;
+    font-size: 1.5em;
+  }
+  
+  section>article>figure>figcaption{
+    color: royalblue;
+    font-size: 1.5em;
+  }
+  
+  article>p{
+    font-size: 1em;
+    padding: 0 0 2em 0;
+    margin: 0;
+  }
+  
+  section:last-of-type{
+    background-color: lightgray;
+    text-align: center;
+    margin: 1em 0 1em 0;
+    padding: 1em 0 1em 0;
+    font-size: 1.5em;
+  }
+  
       
-      ul{
-        height: 100%;
-        width: max-content;
-        padding: 0 1em 0 1em;
-      }
-      
-      li{
-        height: 2.2em;
-        width: 100%;
-        list-style: none;
-        margin: 0.2em;
-        margin-bottom: 0;
-        margin-bottom: 0.5em;
-        text-align: start;
-        font-size: 1.2em;
-      }
-      a{
-        float: left;
-        height: 1.8em;
-        width: 17em;
-        text-decoration: none;
-        background-color:royalblue;
-        color: whitesmoke;
-        padding: 5px 10px 5px 10px;
-        font-size: 1em;
-      }
-      
-      main{
-        width: 77%;
-        float: left;
-        padding: 1em;
-        padding-top: 0em;
-      }
-      
-      main>figure>figcaption{
-        background-color: royalblue;
-        color: whitesmoke;
-        font-size: 2em;
-        padding: 0.5em;
-      }
-      section:nth-of-type(2){
-        height: 25em;
-        width: max-content;
-        font-size: 1.5em;
-        margin: 0 auto;
-      }
-      section:nth-of-type(2)>article{
-        float: left;
-        height: 25em;
-        width: 12em;
-        padding: 1em;
-        margin: 0 auto;
-      }
-      
-      section:first-of-type{
-        background-color: lightgray;
-        text-align: center;
-        margin: 1em 0 1em 0;
-        padding: 1em 0 1em 0;
-        font-size: 1.5em;
-      }
-      
-      section>article>figure>figcaption{
-        color: royalblue;
-        font-size: 1.5em;
-      }
-      
-      article>p{
-        font-size: 1em;
-        padding: 0 0 2em 0;
-        margin: 0;
-      }
-      
-      section:last-of-type{
-        background-color: lightgray;
-        text-align: center;
-        margin: 1em 0 1em 0;
-        padding: 1em 0 1em 0;
-        font-size: 1.5em;
-      }
-      
-      footer{
-        float:right;
-        height: 100%;
-        width: 100%;
-        background-color:powderblue;
-        margin: 0 auto;
-      }
-      footer>div>p{
-        float:left;
-        text-align: center;
-        margin:0;
-        padding-top: 0.5em;
-        font-size: 1.5em;
-      }
-      footer>div:nth-child(2){
-        float: right;
-        width: max-content;
-        margin: 0 auto;
-      }
-      footer>div>span{
-        display: inline-block; 
-        overflow: hidden;
-        height: 3em;
-        width: 3em;
-      }
-      footer>div>span:first-child>img{
-        height: 6em;
-        width: 8em;
-        margin-top: -3rem;
-        margin-left: -5rem;
-      }
-      footer>div>span:nth-child(2)>img{
-        height: 6em;
-        width: 8em;
-        margin-bottom: 0rem;
-        margin-left: -5rem;
-      }
-      footer>div>span:nth-child(3)>img{
-        height: 6em;
-        width: 8em;
-        margin-top: -3rem;
-        margin-left: -2.5rem;
-      }
-      footer>div>span:nth-child(4)>img{
-        height: 6em;
-        width: 8em;
-        margin-top: -3rem;
-        margin-left: 0rem;
-      }
-      footer>div>span:nth-child(5)>img{
-      
-        height: 6em;
-        width: 8em;
-        margin-bottom: 0rem;
-        margin-left: -2.5rem;
-      
-      }
-      footer>div>span:nth-child(6)>img{
-        height: 6em;
-        width: 8em;
-        margin-bottom: 0rem;
-        margin-top: 0rem;
-        margin-left: 0rem;
-      }
-      
+  footer{
+    float:right;
+    height: 100%;
+    width: 100%;
+    background-color:powderblue;
+    margin: 0 auto;
+  }
+  footer>div>p{
+    float:left;
+    text-align: center;
+    margin:0;
+    padding-top: 0.5em;
+    font-size: 1.5em;
+  }
+  footer>div:nth-child(2){
+    float: right;
+    width: max-content;
+    margin: 0 auto;
+  }
+  footer>div>span{
+    display: inline-block; 
+    overflow: hidden;
+    height: 3em;
+    width: 3em;
+  }
+  footer>div>span:first-child>img{
+    height: 6em;
+    width: 8em;
+    margin-top: -3rem;
+    margin-left: -5rem;
+  }
+  footer>div>span:nth-child(2)>img{
+    height: 6em;
+    width: 8em;
+    margin-bottom: 0rem;
+    margin-left: -5rem;
+  }
+  footer>div>span:nth-child(3)>img{
+    height: 6em;
+    width: 8em;
+    margin-top: -3rem;
+    margin-left: -2.5rem;
+  }
+  footer>div>span:nth-child(4)>img{
+    height: 6em;
+    width: 8em;
+    margin-top: -3rem;
+    margin-left: 0rem;
+  }
+  footer>div>span:nth-child(5)>img{
+  
+    height: 6em;
+    width: 8em;
+    margin-bottom: 0rem;
+    margin-left: -2.5rem;
+  
+  }
+  footer>div>span:nth-child(6)>img{
+    height: 6em;
+    width: 8em;
+    margin-bottom: 0rem;
+    margin-top: 0rem;
+    margin-left: 0rem;
+  }
+  
       
 }
 
