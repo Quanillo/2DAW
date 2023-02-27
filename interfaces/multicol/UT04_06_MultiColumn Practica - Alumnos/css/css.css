@@ -1,10 +1,25 @@
 
 body {
 	line-height: 1.5;
+
 }
 
 
 
 img {
 	max-width: 100%;
+}
+
+ul{
+	columns: 13em;
+	list-style: none;
+	padding: 0;
+	column-rule-style: solid;
+	column-rule-color:  gainsboro;
+	column-fill: balance;
+}
+
+li{
+	display: block;
+	break-inside: avoid-column;
 }
