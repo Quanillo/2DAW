@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
+
+
+body{
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: cornflowerblue;
+}
+
+ul{
+    list-style: none;
+    width: min-content;
+    padding: 1em;
+    background-color: ghostwhite;
+}
+
+li{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px gainsboro solid;
+    padding-bottom: 1em;
+    margin-top: 1em;
+}
+
+li:last-of-type{
+    border: none;
+}
+
+div:last-child{
+    margin-left: 1em;
+
+}
+
+img{
+    border-radius:150px;
+    padding: 0.3em;
+    border: solid 1px grey;
+}
+
+p{
+    font-family: 'Raleway', sans-serif;
+    color: gray;
+    width: 14em;
+    margin: 0.5em;
+    padding-left: 2em;
+    background-image: url("../img/iconos.png");
+    background-repeat:no-repeat;
+    background-size: 10%;
+}
+p:first-of-type{
+
+    background-position: 0 -3em;
+}
+p:nth-last-of-type(2){
+
+    background-position: 0 -1.6em;
+}
+p:last-of-type{
+
+    background-position: 0 -4.5em;
+}

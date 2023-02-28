@@ -1,0 +1,310 @@
+{
+  "config": {
+    "tipo": [
+      "Alumno",
+      "Profesor"
+    ]
+  },
+  "persons": [
+    {
+      "id": "1",
+      "nombre": "Brittany",
+      "seleccionado": false,
+      "tipo": "Profesor"
+    },
+    {
+      "id": "2",
+      "nombre": "Claudette",
+      "seleccionado": false,
+      "tipo": "Profesor"
+    },
+    {
+      "id": "4",
+      "nombre": "Shirlee",
+      "seleccionado": false,
+      "tipo": "Profesor"
+    },
+    {
+      "id": "5",
+      "nombre": "Lutero",
+      "seleccionado": false,
+      "tipo": "Alumno"
+    },
+    {
+      "id": "3",
+      "nombre": "Salomo",
+      "seleccionado": false,
+      "tipo": "Alumno"
+    },
+    {
+      "id": "6",
+      "nombre": "Cynthie",
+      "seleccionado": false,
+      "tipo": "Profesor"
+    },
+    {
+      "id": "7",
+      "nombre": "Giffy",
+      "seleccionado": false,
+      "tipo": "Alumno"
+    },
+    {
+      "id": "8",
+      "nombre": "Fernande",
+      "seleccionado": false,
+      "tipo": "Profesor"
+    },
+    {
+      "id": "9",
+      "nombre": "Ula",
+      "seleccionado": false,
+      "tipo": "Profesor"
+    },
+    {
+      "id": "10",
+      "nombre": "Tildy",
+      "seleccionado": false,
+      "tipo": "Profesor"
+    },
+    {
+      "id": "14",
+      "nombre": "Devlen",
+      "seleccionado": false,
+      "tipo": "Agender"
+    },
+    {
+      "id": "11",
+      "nombre": "Amble",
+      "seleccionado": false,
+      "tipo": "Alumno"
+    },
+    {
+      "id": "13",
+      "nombre": "Joelynn",
+      "seleccionado": false,
+      "tipo": "Profesor"
+    },
+    {
+      "id": "16",
+      "nombre": "Marin",
+      "seleccionado": false,
+      "tipo": "Profesor"
+    },
+    {
+      "id": "15",
+      "nombre": "Danni",
+      "seleccionado": false,
+      "tipo": "Profesor"
+    },
+    {
+      "id": "17",
+      "nombre": "Raven",
+      "seleccionado": false,
+      "tipo": "Profesor"
+    },
+    {
+      "id": "12",
+      "nombre": "Alameda",
+      "seleccionado": false,
+      "tipo": "Profesor"
+    },
+    {
+      "id": "18",
+      "nombre": "Gabie",
+      "seleccionado": false,
+      "tipo": "Alumno"
+    },
+    {
+      "id": "19",
+      "nombre": "Shurwood",
+      "seleccionado": false,
+      "tipo": "Alumno"
+    },
+    {
+      "id": "20",
+      "nombre": "Reg",
+      "seleccionado": false,
+      "tipo": "Alumno"
+    },
+    {
+      "id": "21",
+      "nombre": "Moses",
+      "seleccionado": false,
+      "tipo": "Alumno"
+    },
+    {
+      "id": "22",
+      "nombre": "Jenny",
+      "seleccionado": false,
+      "tipo": "Profesor"
+    },
+    {
+      "id": "24",
+      "nombre": "Bev",
+      "seleccionado": false,
+      "tipo": "Alumno"
+    },
+    {
+      "id": "25",
+      "nombre": "Eldredge",
+      "seleccionado": false,
+      "tipo": "Alumno"
+    },
+    {
+      "id": "26",
+      "nombre": "Broderic",
+      "seleccionado": false,
+      "tipo": "Alumno"
+    },
+    {
+      "id": "23",
+      "nombre": "Elmo",
+      "seleccionado": false,
+      "tipo": "Alumno"
+    },
+    {
+      "id": "30",
+      "nombre": "Alexio",
+      "seleccionado": false,
+      "tipo": "Alumno"
+    },
+    {
+      "id": "27",
+      "nombre": "Gunner",
+      "seleccionado": false,
+      "tipo": "Alumno"
+    },
+    {
+      "id": "29",
+      "nombre": "Silvano",
+      "seleccionado": false,
+      "tipo": "Alumno"
+    },
+    {
+      "id": "28",
+      "nombre": "Benny",
+      "seleccionado": false,
+      "tipo": "Alumno"
+    },
+    {
+      "id": "31",
+      "nombre": "Lorilee",
+      "seleccionado": false,
+      "tipo": "Profesor"
+    },
+    {
+      "id": "33",
+      "nombre": "Chiquia",
+      "seleccionado": false,
+      "tipo": "Profesor"
+    },
+    {
+      "id": "32",
+      "nombre": "Shannah",
+      "seleccionado": false,
+      "tipo": "Profesor"
+    },
+    {
+      "id": "37",
+      "nombre": "Collin",
+      "seleccionado": false,
+      "tipo": "Alumno"
+    },
+    {
+      "id": "34",
+      "nombre": "Mitchael",
+      "seleccionado": false,
+      "tipo": "Alumno"
+    },
+    {
+      "id": "35",
+      "nombre": "Annadiane",
+      "seleccionado": false,
+      "tipo": "Genderqueer"
+    },
+    {
+      "id": "36",
+      "nombre": "Myrlene",
+      "seleccionado": false,
+      "tipo": "Profesor"
+    },
+    {
+      "id": "40",
+      "nombre": "Raimundo",
+      "seleccionado": false,
+      "tipo": "Alumno"
+    },
+    {
+      "id": "41",
+      "nombre": "Ibbie",
+      "seleccionado": false,
+      "tipo": "Agender"
+    },
+    {
+      "id": "38",
+      "nombre": "Ignacio",
+      "seleccionado": false,
+      "tipo": "Alumno"
+    },
+    {
+      "id": "42",
+      "nombre": "Hugues",
+      "seleccionado": false,
+      "tipo": "Alumno"
+    },
+    {
+      "id": "39",
+      "nombre": "Toiboid",
+      "seleccionado": false,
+      "tipo": "Alumno"
+    },
+    {
+      "id": "44",
+      "nombre": "Fina",
+      "seleccionado": false,
+      "tipo": "Profesor"
+    },
+    {
+      "id": "46",
+      "nombre": "Dickie",
+      "seleccionado": false,
+      "tipo": "Alumno"
+    },
+    {
+      "id": "47",
+      "nombre": "Jilli",
+      "seleccionado": false,
+      "tipo": "Profesor"
+    },
+    {
+      "id": "45",
+      "nombre": "Madelon",
+      "seleccionado": false,
+      "tipo": "Profesor"
+    },
+    {
+      "id": "43",
+      "nombre": "Carole",
+      "seleccionado": false,
+      "tipo": "Profesor"
+    },
+    {
+      "id": "50",
+      "nombre": "Roobbie",
+      "seleccionado": false,
+      "tipo": "Profesor"
+    },
+    {
+      "id": "49",
+      "nombre": "Barty",
+      "seleccionado": false,
+      "tipo": "Alumno"
+    },
+    {
+      "id": "48",
+      "nombre": "Andreas",
+      "seleccionado": false,
+      "tipo": "Alumno"
+    }
+  ]
+}
